@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  web-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: web-frontend-img:1.0
+    container_name: web-frontend
+    restart: always
+    networks:
+      - amsi_network
+    ports:
+    - 3000:3000
+    expose:
+    - 3000
+
+networks:
+  amsi_network:
+    external: true
+    name: amsi_network
