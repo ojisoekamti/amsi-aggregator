@@ -14,56 +14,38 @@ const widgetMenus: WidgetFooterMenu[] = [
     id: "5",
     title: "Getting started",
     menus: [
-      { href: "#", label: "Installation" },
-      { href: "#", label: "Release Notes" },
-      { href: "#", label: "Upgrade Guide" },
-      { href: "#", label: "Browser Support" },
+      { href: "#", label: "News" },
+      { href: "#", label: "International" },
+      { href: "#", label: "Program" },
+      { href: "#", label: "Siaran Pers" },
       { href: "#", label: "Editor Support" },
-      { href: "#", label: "Utility-First" },
-      { href: "#", label: "Dark Mode" },
-      { href: "#", label: "Responsive Design" },
     ],
   },
   {
     id: "1",
     title: "Explore",
     menus: [
-      { href: "#", label: "Design features" },
-      { href: "#", label: "Prototyping" },
-      { href: "#", label: "Design systems" },
-      { href: "#", label: "Pricing" },
-      { href: "#", label: "Customers" },
-      { href: "#", label: "Security" },
-      { href: "#", label: "Integrations" },
-      { href: "#", label: "Contact" },
+      { href: "#", label: "Nasional" },
+      { href: "#", label: "Agenda" },
+      { href: "#", label: "Foto" },
+      { href: "#", label: "Video" },
     ],
   },
   {
     id: "2",
     title: "Resources",
     menus: [
-      { href: "#", label: "Best practices" },
-      { href: "#", label: "Support" },
-      { href: "#", label: "Developers" },
-      { href: "#", label: "Learn design" },
-      { href: "#", label: "What's new" },
-      { href: "#", label: "Releases" },
-      { href: "#", label: "Careers" },
-      { href: "#", label: "About us" },
+      { href: "#", label: "Redaksi" },
+      { href: "#", label: "Kontak" },
+      { href: "#", label: "Tentang Kami" },
     ],
   },
   {
     id: "4",
     title: "Community",
     menus: [
-      { href: "#", label: "Discussion Forums" },
-      { href: "#", label: "Code of Conduct" },
-      { href: "#", label: "Community Resources" },
-      { href: "#", label: "Contributing" },
-      { href: "#", label: "Concurrent Mode" },
-      { href: "#", label: "API Reference" },
-      { href: "#", label: "Advanced Guides" },
-      { href: "#", label: "Main Concepts" },
+      { href: "#", label: "Pedoman Media Siber" },
+      { href: "#", label: "Kebijakan Privasi" },
     ],
   },
 ];
@@ -72,17 +54,13 @@ const Footer: React.FC = () => {
   const renderWidgetMenuItem = (menu: WidgetFooterMenu, index: number) => {
     return (
       <div key={index} className="text-sm">
-        <h2 className="font-semibold text-neutral-700 dark:text-neutral-200">
+        {/* <h2 className="font-semibold text-neutral-700 dark:text-neutral-200">
           {menu.title}
-        </h2>
+        </h2> */}
         <ul className="mt-5 space-y-4">
           {menu.menus.map((item, index) => (
             <li key={index}>
-              <a
-                key={index}
-                className="text-neutral-6000 dark:text-neutral-300 hover:text-black dark:hover:text-white"
-                href={item.href}
-              >
+              <a key={index} className="text-neutral-6000 dark:text-neutral-300 hover:text-black dark:hover:text-white" href={item.href}>
                 {item.label}
               </a>
             </li>

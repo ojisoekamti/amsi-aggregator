@@ -39,13 +39,14 @@ import MediaRunningContainerForSafari from "containers/MediaRunningContainer/Med
 import isSafariBrowser from "utils/isSafariBrowser";
 import PageHomeDemo7 from "containers/PageHome/PageHomeDemo7";
 import PageSingleTemp4Sidebar from "containers/PageSingle/PageSingleTemp4Sidebar";
+import LayerHome from "containers/LayerHome/LayerHome";
 
 export const pages: Page[] = [
-  { path: "/", exact: true, component: PageHome },
-  { path: "/#", exact: true, component: PageHome },
+  { path: "/", exact: true, component: LayerHome },
+  { path: "/#", exact: true, component: LayerHome },
   //
-  { path: "/home-header-style2", exact: true, component: PageHome },
-  { path: "/home-header-style2-logedin", exact: true, component: PageHome },
+  { path: "/home-header-style2", exact: true, component: LayerHome },
+  { path: "/home-header-style2-logedin", exact: true, component: LayerHome },
   //
   { path: "/archive/:slug", component: PageArchive },
   { path: "/archive-video/:slug", component: PageArchiveVideo },
@@ -116,21 +117,15 @@ const Routes = () => {
   return (
     <BrowserRouter
       basename={
-        import.meta.env.VITE_LRT_OR_RTL === "rtl" ? "/ncmaz-rtl" : "/ncmaz"
+        // import.meta.env.VITE_LRT_OR_RTL === "rtl" ? "/ncmaz-rtl" : "/ncmaz"
+        ""
       }
     >
       <ScrollToTop />
       <HeaderContainer />
       <Switch>
         {pages.map(({ component, path, exact }) => {
-          return (
-            <Route
-              key={path}
-              component={component}
-              exact={!!exact}
-              path={path}
-            />
-          );
+          return <Route key={path} component={component} exact={!!exact} path={path} />;
         })}
         <Route component={Page404} />
       </Switch>
@@ -138,11 +133,7 @@ const Routes = () => {
       {/* MEDIA */}
 
       {/* //is Safari on an apple touch-screen device */}
-      {isSafariBrowser() ? (
-        <MediaRunningContainerForSafari />
-      ) : (
-        <MediaRunningContainer />
-      )}
+      {isSafariBrowser() ? <MediaRunningContainerForSafari /> : <MediaRunningContainer />}
     </BrowserRouter>
   );
 };

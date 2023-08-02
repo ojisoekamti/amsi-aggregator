@@ -9,11 +9,7 @@ export interface SectionLargeSliderProps {
   posts: PostDataType[];
 }
 
-const SectionLargeSlider: FC<SectionLargeSliderProps> = ({
-  posts,
-  heading = "Editor's pick",
-  className = "",
-}) => {
+const SectionLargeSlider: FC<SectionLargeSliderProps> = ({ posts, heading = "Editor's pick", className = "" }) => {
   const [indexActive, setIndexActive] = useState(0);
 
   const handleClickNext = () => {
@@ -36,15 +32,9 @@ const SectionLargeSlider: FC<SectionLargeSliderProps> = ({
 
   return (
     <div className={`nc-SectionLargeSlider relative ${className}`}>
-      {!!heading && <Heading>{heading}</Heading>}
+      {/* {!!heading && <Heading>{heading}</Heading>} */}
       {posts.map((item, index) => (
-        <CardLarge1
-          key={index}
-          isShowing={indexActive === index}
-          onClickNext={handleClickNext}
-          onClickPrev={handleClickPrev}
-          post={item}
-        />
+        <CardLarge1 key={index} isShowing={indexActive === index} onClickNext={handleClickNext} onClickPrev={handleClickPrev} post={item} />
       ))}
     </div>
   );

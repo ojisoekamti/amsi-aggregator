@@ -1,7 +1,4 @@
-import {
-  MegamenuItem,
-  NavItemType,
-} from "components/Navigation/NavigationItem";
+import { MegamenuItem, NavItemType } from "components/Navigation/NavigationItem";
 import ncNanoId from "utils/ncNanoId";
 import __megamenu from "./jsons/__megamenu.json";
 
@@ -275,22 +272,13 @@ const singleChildrenMenus: NavItemType = {
 const demoChildMenus: NavItemType[] = [
   {
     id: ncNanoId(),
-    name:
-      import.meta.env.VITE_LRT_OR_RTL === "rtl"
-        ? "Default Demo - LTR"
-        : "Default Demo",
+    name: import.meta.env.VITE_LRT_OR_RTL === "rtl" ? "Default Demo - LTR" : "Default Demo",
     targetBlank: import.meta.env.VITE_LRT_OR_RTL === "rtl",
-    href:
-      import.meta.env.VITE_LRT_OR_RTL === "rtl"
-        ? "https://chisnghiax.com/ncmaz/"
-        : "/",
+    href: import.meta.env.VITE_LRT_OR_RTL === "rtl" ? "https://chisnghiax.com/ncmaz/" : "/",
   },
   {
     id: ncNanoId(),
-    href:
-      import.meta.env.VITE_LRT_OR_RTL !== "rtl"
-        ? "https://chisnghiax.com/ncmaz-rtl/"
-        : "/",
+    href: import.meta.env.VITE_LRT_OR_RTL !== "rtl" ? "https://chisnghiax.com/ncmaz-rtl/" : "/",
     name: "Home Demo - RTL",
     targetBlank: import.meta.env.VITE_LRT_OR_RTL !== "rtl",
     isNew: true,
@@ -367,38 +355,52 @@ export const NAVIGATION_DEMO: NavItemType[] = [
   {
     id: ncNanoId(),
     href: "/",
-    name: "Home",
+    name: "News",
     type: "dropdown",
     children: demoChildMenus,
   },
   {
     id: ncNanoId(),
     href: "#",
-    name: "Five cols",
-    type: "megaMenu",
-    megaMenu: megaMenuDemo,
+    name: "Nasional",
+    type: "dropdown",
+    children: demoChildMenus,
   },
 
   {
     id: ncNanoId(),
     href: "#",
-    name: "Fewer cols",
-    type: "megaMenu",
-    megaMenu: megaMenu3ItemDemo,
+    name: "International",
+    // type: "megaMenu",
+    // megaMenu: megaMenu3ItemDemo,
   },
   {
     id: ncNanoId(),
     href: "#",
-    name: "Templates",
-    type: "dropdown",
-    children: templateChilds,
+    name: "Program",
+    // type: "megaMenu",
+    // megaMenu: megaMenu3ItemDemo,
   },
   {
     id: ncNanoId(),
     href: "#",
-    name: "Other pages",
+    name: "Siaran Pers",
+    // type: "megaMenu",
+    // megaMenu: megaMenu3ItemDemo,
+  },
+  {
+    id: ncNanoId(),
+    href: "#",
+    name: "Foto",
     type: "dropdown",
-    children: otherPageChildMenus,
+    children: demoChildMenus,
+  },
+  {
+    id: ncNanoId(),
+    href: "#",
+    name: "Video Agenda",
+    // type: "megaMenu",
+    // megaMenu: megaMenu3ItemDemo,
   },
 ];
 
