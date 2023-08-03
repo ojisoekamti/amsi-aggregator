@@ -57,6 +57,10 @@ export interface LocationStates {
   "/home-demo-5"?: {};
   "/home-demo-6"?: {};
   "/home-demo-7"?: {};
+  "/layer-home-2"?: {};
+  "/layer-home-3"?: {};
+  "/layer-home-4"?: {};
+  "/layer-home-5"?: {};
 }
 
 export type PathName = keyof LocationStates;

@@ -40,6 +40,10 @@ import isSafariBrowser from "utils/isSafariBrowser";
 import PageHomeDemo7 from "containers/PageHome/PageHomeDemo7";
 import PageSingleTemp4Sidebar from "containers/PageSingle/PageSingleTemp4Sidebar";
 import LayerHome from "containers/LayerHome/LayerHome";
+import LayerHome2 from "containers/LayerHome2/LayerHome2";
+import LayerHome3 from "containers/LayerHome3/LayerHome3";
+import LayerHome4 from "containers/LayerHome4/LayerHome4";
+import LayerHome5 from "containers/LayerHome5/LayerHome5";
 
 export const pages: Page[] = [
   { path: "/", exact: true, component: LayerHome },
@@ -110,6 +114,10 @@ export const pages: Page[] = [
   { path: "/home-demo-5", component: PageHomeDemo5 },
   { path: "/home-demo-6", component: PageHomeDemo6 },
   { path: "/home-demo-7", component: PageHomeDemo7 },
+  { path: "/layer-home-2", component: LayerHome2 },
+  { path: "/layer-home-3", component: LayerHome3 },
+  { path: "/layer-home-4", component: LayerHome4 },
+  { path: "/layer-home-5", component: LayerHome5 },
   //
 ];
 
