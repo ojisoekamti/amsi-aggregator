@@ -10,11 +10,7 @@ export interface SectionMagazine5Props {
   heading?: string;
 }
 
-const SectionMagazine5: FC<SectionMagazine5Props> = ({
-  posts,
-  tabs,
-  heading = "Latest Articles 🎈 ",
-}) => {
+const SectionMagazine5: FC<SectionMagazine5Props> = ({ posts, tabs, heading = "Latest Articles 🎈 " }) => {
   const [tabActive, setTabActive] = useState<string>(tabs[0]);
 
   const handleClickTab = (item: string) => {
@@ -26,18 +22,13 @@ const SectionMagazine5: FC<SectionMagazine5Props> = ({
 
   return (
     <div className="nc-SectionMagazine5">
-      <HeaderFilter
-        tabActive={tabActive}
-        tabs={tabs}
-        heading={heading}
-        onClickTab={handleClickTab}
-      />
+      <HeaderFilter tabActive={tabActive} tabs={tabs} heading={heading} onClickTab={handleClickTab} />
       {!posts.length && <span>Nothing we found!</span>}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-7">
         {posts[0] && <Card12 post={posts[0]} />}
         <div className="grid grid-cols-1 gap-5 md:gap-7">
           {posts
-            .filter((_, i) => i < 4 && i > 0)
+            .filter((_: any, i: number) => i < 4 && i > 0)
             .map((item, index) => (
               <Card13 key={index} post={item} />
             ))}

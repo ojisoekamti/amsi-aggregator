@@ -21,7 +21,7 @@ export interface PageArchiveVideoProps {
 }
 
 // Tag and category have same data type - we will use one demo data
-const posts: PostDataType[] = DEMO_POSTS_VIDEO.filter((_, i) => i < 12);
+const posts: PostDataType[] = DEMO_POSTS_VIDEO.filter((_: any, i: number) => i < 12);
 
 const PageArchiveVideo: FC<PageArchiveVideoProps> = ({ className = "" }) => {
   const PAGE_DATA: TaxonomyType = DEMO_CATEGORIES[2];
@@ -35,10 +35,7 @@ const PageArchiveVideo: FC<PageArchiveVideoProps> = ({ className = "" }) => {
   ];
 
   return (
-    <div
-      className={`nc-PageArchiveVideo overflow-hidden ${className}`}
-      data-nc-id="PageArchiveVideo"
-    >
+    <div className={`nc-PageArchiveVideo overflow-hidden ${className}`} data-nc-id="PageArchiveVideo">
       <Helmet>
         <title>Archive || Blog Magazine React Template</title>
       </Helmet>
@@ -46,12 +43,8 @@ const PageArchiveVideo: FC<PageArchiveVideoProps> = ({ className = "" }) => {
       <div className="dark bg-neutral-900 dark:bg-transparent text-white">
         <div className="container py-16 lg:py-28 ">
           {/* HEADER */}
-          <h2 className="inline-block align-middle text-5xl font-semibold md:text-6xl ">
-            {PAGE_DATA.name}
-          </h2>
-          <span className="block mt-4 text-neutral-300">
-            {PAGE_DATA.count} Videos
-          </span>
+          <h2 className="inline-block align-middle text-5xl font-semibold md:text-6xl ">{PAGE_DATA.name}</h2>
+          <span className="block mt-4 text-neutral-300">{PAGE_DATA.count} Videos</span>
           {/* ====================== END HEADER ====================== */}
           <div className="mt-16 flex flex-col sm:items-center sm:justify-between sm:flex-row">
             <div className="flex space-x-2.5">
@@ -85,16 +78,14 @@ const PageArchiveVideo: FC<PageArchiveVideoProps> = ({ className = "" }) => {
         <SectionSliderNewAuthors
           heading="Top elite authors"
           subHeading="Discover our elite writers"
-          authors={DEMO_AUTHORS.filter((_, i) => i < 10)}
+          authors={DEMO_AUTHORS.filter((_: any, i: number) => i < 10)}
           uniqueSliderClass="PageArchiveVideo"
         />
 
         {/* === SECTION 5 === */}
         <div className="relative py-16">
           <BackgroundSection />
-          <SectionGridCategoryBox
-            categories={DEMO_CATEGORIES.filter((_, i) => i < 10)}
-          />
+          <SectionGridCategoryBox categories={DEMO_CATEGORIES.filter((_: any, i: number) => i < 10)} />
           <div className="text-center mx-auto mt-10 md:mt-16">
             <ButtonSecondary>Show me more</ButtonSecondary>
           </div>

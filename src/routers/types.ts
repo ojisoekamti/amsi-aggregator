@@ -61,6 +61,7 @@ export interface LocationStates {
   "/layer-home-3"?: {};
   "/layer-home-4"?: {};
   "/layer-home-5"?: {};
+  "/aggregator"?: {};
 }
 
 export type PathName = keyof LocationStates;

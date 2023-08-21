@@ -11,7 +11,7 @@ export interface SectionPilihanEditorProps {
 }
 
 // DEMO DATA
-const demoRelated: PostDataType[] = DEMO_POSTS.filter((_, i) => i >= 6 && i < 10);
+const demoRelated: PostDataType[] = DEMO_POSTS.filter((_: any, i: number) => i >= 6 && i < 10);
 
 const SectionPilihanEditor: FC<SectionPilihanEditorProps> = ({ relatedPosts = demoRelated, heading }) => {
   return (

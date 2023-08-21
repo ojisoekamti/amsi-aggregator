@@ -6,12 +6,7 @@ import Card9 from "components/Card9/Card9";
 
 export interface SectionMagazine4Props extends SectionMagazine1Props {}
 
-const SectionMagazine4: FC<SectionMagazine4Props> = ({
-  posts,
-  tabs,
-  className = "",
-  heading = "Latest Articles 🎈 ",
-}) => {
+const SectionMagazine4: FC<SectionMagazine4Props> = ({ posts, tabs, className = "", heading = "Latest Articles 🎈 " }) => {
   const [tabActive, setTabActive] = useState<string>(tabs[0]);
 
   // When handeClicktab please get posts from api,... and pass to new state (newPosts) and pass to
@@ -24,23 +19,18 @@ const SectionMagazine4: FC<SectionMagazine4Props> = ({
 
   return (
     <div className={`nc-SectionMagazine4 ${className}`}>
-      <HeaderFilter
-        tabActive={tabActive}
-        tabs={tabs}
-        heading={heading}
-        onClickTab={handleClickTab}
-      />
+      <HeaderFilter tabActive={tabActive} tabs={tabs} heading={heading} onClickTab={handleClickTab} />
 
       {!posts.length && <span>Nothing we found!</span>}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
         {posts[0] && <Card8 className="sm:col-span-2" post={posts[0]} />}
         {posts
-          .filter((_, i) => i < 3 && i >= 1)
+          .filter((_: any, i: number) => i < 3 && i >= 1)
           .map((item, index) => (
             <Card9 key={index} post={item} />
           ))}
         {posts
-          .filter((_, i) => i < 5 && i >= 3)
+          .filter((_: any, i: number) => i < 5 && i >= 3)
           .map((item, index) => (
             <Card9 key={index} post={item} />
           ))}

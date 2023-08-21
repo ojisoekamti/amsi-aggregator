@@ -22,7 +22,7 @@ export interface PageArchiveProps {
 }
 
 // Tag and category have same data type - we will use one demo data
-const posts: PostDataType[] = DEMO_POSTS.filter((_, i) => i < 16);
+const posts: PostDataType[] = DEMO_POSTS.filter((_: any, i: number) => i < 16);
 
 const PageArchive: FC<PageArchiveProps> = ({ className = "" }) => {
   const PAGE_DATA: TaxonomyType = DEMO_CATEGORIES[0];
@@ -36,10 +36,7 @@ const PageArchive: FC<PageArchiveProps> = ({ className = "" }) => {
   ];
 
   return (
-    <div
-      className={`nc-PageArchive overflow-hidden ${className}`}
-      data-nc-id="PageArchive"
-    >
+    <div className={`nc-PageArchive overflow-hidden ${className}`} data-nc-id="PageArchive">
       <Helmet>
         <title>Archive || Blog Magazine React Template</title>
       </Helmet>
@@ -53,12 +50,8 @@ const PageArchive: FC<PageArchiveProps> = ({ className = "" }) => {
             className="object-cover w-full h-full"
           />
           <div className="absolute inset-0 bg-black text-white bg-opacity-30 flex flex-col items-center justify-center">
-            <h2 className="inline-block align-middle text-5xl font-semibold md:text-7xl ">
-              {PAGE_DATA.name}
-            </h2>
-            <span className="block mt-4 text-neutral-300">
-              {PAGE_DATA.count} Articles
-            </span>
+            <h2 className="inline-block align-middle text-5xl font-semibold md:text-7xl ">{PAGE_DATA.name}</h2>
+            <span className="block mt-4 text-neutral-300">{PAGE_DATA.count} Articles</span>
           </div>
         </div>
       </div>
@@ -95,9 +88,7 @@ const PageArchive: FC<PageArchiveProps> = ({ className = "" }) => {
         {/* === SECTION 5 === */}
         <div className="relative py-16">
           <BackgroundSection />
-          <SectionGridCategoryBox
-            categories={DEMO_CATEGORIES.filter((_, i) => i < 10)}
-          />
+          <SectionGridCategoryBox categories={DEMO_CATEGORIES.filter((_: any, i: number) => i < 10)} />
           <div className="text-center mx-auto mt-10 md:mt-16">
             <ButtonSecondary>Show me more</ButtonSecondary>
           </div>
@@ -107,7 +98,7 @@ const PageArchive: FC<PageArchiveProps> = ({ className = "" }) => {
         <SectionSliderNewAuthors
           heading="Top elite authors"
           subHeading="Discover our elite writers"
-          authors={DEMO_AUTHORS.filter((_, i) => i < 10)}
+          authors={DEMO_AUTHORS.filter((_: any, i: number) => i < 10)}
           uniqueSliderClass="PageArchive"
         />
 

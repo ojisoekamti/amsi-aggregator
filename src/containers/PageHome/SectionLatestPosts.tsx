@@ -20,15 +20,11 @@ import Card14 from "components/Card14/Card14";
 
 // THIS IS DEMO FOR MAIN DEMO
 // OTHER DEMO WILL PASS PROPS
-const postsDemo: PostDataType[] = DEMO_POSTS.filter((_, i) => i > 7 && i < 17);
-const widgetPostsDemo: PostDataType[] = DEMO_POSTS.filter(
-  (_, i) => i > 2 && i < 7
-);
-const tagsDemo = DEMO_TAGS.filter((_, i) => i > 5);
-const categoriesDemo: TaxonomyType[] = DEMO_CATEGORIES.filter(
-  (_, i) => i > 7 && i < 13
-);
-const authorsDemo: PostAuthorType[] = DEMO_AUTHORS.filter((_, i) => i < 5);
+const postsDemo: PostDataType[] = DEMO_POSTS.filter((_: any, i: number) => i > 7 && i < 17);
+const widgetPostsDemo: PostDataType[] = DEMO_POSTS.filter((_: any, i: number) => i > 2 && i < 7);
+const tagsDemo = DEMO_TAGS.filter((_: any, i: number) => i > 5);
+const categoriesDemo: TaxonomyType[] = DEMO_CATEGORIES.filter((_: any, i: number) => i > 7 && i < 13);
+const authorsDemo: PostAuthorType[] = DEMO_AUTHORS.filter((_: any, i: number) => i < 5);
 
 //
 export interface SectionLatestPostsProps {
@@ -40,14 +36,7 @@ export interface SectionLatestPostsProps {
   gridClass?: string;
   className?: string;
   heading?: string;
-  postCardName?:
-    | "card3"
-    | "card4"
-    | "card7"
-    | "card9"
-    | "card10"
-    | "card11"
-    | "card14";
+  postCardName?: "card3" | "card4" | "card7" | "card9" | "card10" | "card11" | "card14";
 }
 
 const SectionLatestPosts: FC<SectionLatestPostsProps> = ({
@@ -64,19 +53,11 @@ const SectionLatestPosts: FC<SectionLatestPostsProps> = ({
   const renderCard = (post: PostDataType) => {
     switch (postCardName) {
       case "card3":
-        return (
-          <Card3
-            key={post.id}
-            className="p-3 sm:p-5 2xl:p-6 [ nc-box-has-hover ] [ nc-dark-box-bg-has-hover ]"
-            post={post}
-          />
-        );
+        return <Card3 key={post.id} className="p-3 sm:p-5 2xl:p-6 [ nc-box-has-hover ] [ nc-dark-box-bg-has-hover ]" post={post} />;
       case "card4":
         return <Card4 key={post.id} post={post} />;
       case "card7":
-        return (
-          <Card7 key={post.id} post={post} ratio="aspect-w-5 aspect-h-5" />
-        );
+        return <Card7 key={post.id} post={post} ratio="aspect-w-5 aspect-h-5" />;
       case "card9":
         return <Card9 key={post.id} post={post} />;
       case "card10":
@@ -95,9 +76,7 @@ const SectionLatestPosts: FC<SectionLatestPostsProps> = ({
       <div className="flex flex-col lg:flex-row">
         <div className="w-full lg:w-3/5 xl:w-2/3 xl:pr-14">
           <Heading>{heading}</Heading>
-          <div className={`grid gap-6 md:gap-8 ${gridClass}`}>
-            {posts.map((post) => renderCard(post))}
-          </div>
+          <div className={`grid gap-6 md:gap-8 ${gridClass}`}>{posts.map((post) => renderCard(post))}</div>
           <div className="flex flex-col mt-12 md:mt-20 space-y-5 sm:space-y-0 sm:space-x-3 sm:flex-row sm:justify-between sm:items-center">
             <Pagination />
             <ButtonPrimary>Show me more</ButtonPrimary>

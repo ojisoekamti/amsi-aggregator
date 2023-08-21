@@ -8,11 +8,9 @@ export interface SectionGridTagBoxProps {
   tags?: TaxonomyType[];
 }
 
-const DATA = DEMO_CATEGORIES.filter((_, i) => i < 10);
+const DATA = DEMO_CATEGORIES.filter((_: any, i: number) => i < 10);
 
-const SectionGridTagBox: React.FC<SectionGridTagBoxProps> = ({
-  tags = DATA,
-}) => {
+const SectionGridTagBox: React.FC<SectionGridTagBoxProps> = ({ tags = DATA }) => {
   return (
     <div className="nc-SectionGridTagBox relative">
       <Heading desc="Discover over 1130 tags" isCenter>

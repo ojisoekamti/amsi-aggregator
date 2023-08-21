@@ -4,9 +4,7 @@ import Heading from "components/Heading/Heading";
 import { DEMO_POSTS } from "data/posts";
 import { PostDataType } from "data/types";
 
-const postsDemo: PostDataType[] = DEMO_POSTS.filter(
-  (_, i) => i > DEMO_POSTS.length - 10
-);
+const postsDemo: PostDataType[] = DEMO_POSTS.filter((_: any, i: number) => i > DEMO_POSTS.length - 10);
 
 export interface SectionTrending2Props {
   posts?: PostDataType[];

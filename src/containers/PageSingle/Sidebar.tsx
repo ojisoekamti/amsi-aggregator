@@ -12,10 +12,10 @@ export interface SidebarProps {
   className?: string;
 }
 
-const widgetPosts: PostDataType[] = DEMO_POSTS.filter((_, i) => i > 2 && i < 7);
-const tags = DEMO_TAGS.filter((_, i) => i > 5);
-const categories = DEMO_CATEGORIES.filter((_, i) => i > 7 && i < 13);
-const authors = DEMO_AUTHORS.filter((_, i) => i < 5);
+const widgetPosts: PostDataType[] = DEMO_POSTS.filter((_: any, i: number) => i > 2 && i < 7);
+const tags = DEMO_TAGS.filter((_: any, i: number) => i > 5);
+const categories = DEMO_CATEGORIES.filter((_: any, i: number) => i > 7 && i < 13);
+const authors = DEMO_AUTHORS.filter((_: any, i: number) => i < 5);
 
 export const Sidebar: FC<SidebarProps> = ({ className = "space-y-6 " }) => {
   return (

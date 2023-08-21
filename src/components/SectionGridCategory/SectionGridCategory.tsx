@@ -8,11 +8,9 @@ export interface SectionGridCategoryProps {
   categories?: TaxonomyType[];
 }
 
-const DATA = DEMO_CATEGORIES.filter((_, i) => i < 8);
+const DATA = DEMO_CATEGORIES.filter((_: any, i: number) => i < 8);
 
-const SectionGridCategory: React.FC<SectionGridCategoryProps> = ({
-  categories = DATA,
-}) => {
+const SectionGridCategory: React.FC<SectionGridCategoryProps> = ({ categories = DATA }) => {
   return (
     <div className="nc-SectionGridCategory">
       <Heading>📚 Categories</Heading>

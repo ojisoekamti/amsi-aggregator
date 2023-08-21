@@ -27,10 +27,10 @@ export interface PageSearchProps {
   className?: string;
 }
 
-const posts: PostDataType[] = DEMO_POSTS.filter((_, i) => i < 12);
-const cats = DEMO_CATEGORIES.filter((_, i) => i < 15);
-const tags = DEMO_CATEGORIES.filter((_, i) => i < 32);
-const authors = DEMO_AUTHORS.filter((_, i) => i < 12);
+const posts: PostDataType[] = DEMO_POSTS.filter((_: any, i: number) => i < 12);
+const cats = DEMO_CATEGORIES.filter((_: any, i: number) => i < 15);
+const tags = DEMO_CATEGORIES.filter((_: any, i: number) => i < 32);
+const authors = DEMO_AUTHORS.filter((_: any, i: number) => i < 12);
 
 const FILTERS = [
   { name: "Most Recent" },
@@ -45,7 +45,7 @@ const TABS = ["Articles", "Categories", "Tags", "Authors"];
 const PageSearch: FC<PageSearchProps> = ({ className = "" }) => {
   let s = "Technology";
 
-  const [tabActive, setTabActive] = useState<typeof TABS[number]>(TABS[0]);
+  const [tabActive, setTabActive] = useState<(typeof TABS)[number]>(TABS[0]);
 
   const handleClickTab = (item: string) => {
     if (item === tabActive) {
@@ -75,36 +75,14 @@ const PageSearch: FC<PageSearchProps> = ({ className = "" }) => {
             <header className="w-full max-w-3xl mx-auto text-center flex flex-col items-center">
               <h2 className="text-2xl sm:text-4xl font-semibold">{s}</h2>
               <span className="block text-xs sm:text-sm mt-4 text-neutral-500 dark:text-neutral-300">
-                We found{" "}
-                <strong className="font-medium text-neutral-800 dark:text-neutral-100">
-                  1135
-                </strong>{" "}
-                results for{" "}
-                <strong className="font-medium text-neutral-800 dark:text-neutral-100">
-                  {s}
-                </strong>
+                We found <strong className="font-medium text-neutral-800 dark:text-neutral-100">1135</strong> results for{" "}
+                <strong className="font-medium text-neutral-800 dark:text-neutral-100">{s}</strong>
               </span>
-              <form
-                className="relative w-full mt-8 sm:mt-11 text-left"
-                method="post"
-              >
-                <label
-                  htmlFor="search-input"
-                  className="text-neutral-500 dark:text-neutral-300"
-                >
+              <form className="relative w-full mt-8 sm:mt-11 text-left" method="post">
+                <label htmlFor="search-input" className="text-neutral-500 dark:text-neutral-300">
                   <span className="sr-only">Search all icons</span>
-                  <Input
-                    id="search-input"
-                    type="search"
-                    placeholder="Type and press enter"
-                    sizeClass="pl-14 py-5 pr-5 md:pl-16"
-                    defaultValue={s}
-                  />
-                  <ButtonCircle
-                    className="absolute right-2.5 top-1/2 transform -translate-y-1/2"
-                    size=" w-11 h-11"
-                    type="submit"
-                  >
+                  <Input id="search-input" type="search" placeholder="Type and press enter" sizeClass="pl-14 py-5 pr-5 md:pl-16" defaultValue={s} />
+                  <ButtonCircle className="absolute right-2.5 top-1/2 transform -translate-y-1/2" size=" w-11 h-11" type="submit">
                     <i className="las la-arrow-right text-xl"></i>
                   </ButtonCircle>
                   <span className="absolute left-5 top-1/2 transform -translate-y-1/2 text-2xl md:left-6">
@@ -147,16 +125,9 @@ const PageSearch: FC<PageSearchProps> = ({ className = "" }) => {
         <main>
           {/* TABS FILTER */}
           <div className="flex flex-col sm:items-center sm:justify-between sm:flex-row">
-            <Nav
-              containerClassName="w-full overflow-x-auto hiddenScrollbar"
-              className="sm:space-x-2"
-            >
+            <Nav containerClassName="w-full overflow-x-auto hiddenScrollbar" className="sm:space-x-2">
               {TABS.map((item, index) => (
-                <NavItem
-                  key={index}
-                  isActive={tabActive === item}
-                  onClick={() => handleClickTab(item)}
-                >
+                <NavItem key={index} isActive={tabActive === item} onClick={() => handleClickTab(item)}>
                   {item}
                 </NavItem>
               ))}
@@ -212,9 +183,7 @@ const PageSearch: FC<PageSearchProps> = ({ className = "" }) => {
         {/* === SECTION 5 === */}
         <div className="relative py-16">
           <BackgroundSection />
-          <SectionGridCategoryBox
-            categories={DEMO_CATEGORIES.filter((_, i) => i < 10)}
-          />
+          <SectionGridCategoryBox categories={DEMO_CATEGORIES.filter((_: any, i: number) => i < 10)} />
           <div className="text-center mx-auto mt-10 md:mt-16">
             <ButtonSecondary>Show me more</ButtonSecondary>
           </div>
@@ -224,7 +193,7 @@ const PageSearch: FC<PageSearchProps> = ({ className = "" }) => {
         <SectionSliderNewAuthors
           heading="Top elite authors"
           subHeading="Discover our elite writers"
-          authors={DEMO_AUTHORS.filter((_, i) => i < 10)}
+          authors={DEMO_AUTHORS.filter((_: any, i: number) => i < 10)}
           uniqueSliderClass="PageSearch"
         />
 

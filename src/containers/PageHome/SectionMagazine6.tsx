@@ -5,6 +5,7 @@ import NcImage from "components/NcImage/NcImage";
 import PostCardMeta from "components/PostCardMeta/PostCardMeta";
 import { Link } from "react-router-dom";
 import CardAuthor2 from "components/CardAuthor2/CardAuthor2";
+import { DEMO_POSTS } from "data/posts";
 
 export interface SectionMagazine6Props {
   tabs: string[];
@@ -13,12 +14,9 @@ export interface SectionMagazine6Props {
   className?: string;
 }
 
-const SectionMagazine6: FC<SectionMagazine6Props> = ({
-  posts,
-  tabs,
-  heading = "Latest Articles 🎈 ",
-  className = "",
-}) => {
+const POSTS: PostDataType[] = DEMO_POSTS;
+
+const SectionMagazine6: FC<SectionMagazine6Props> = ({ posts, tabs, heading = "Latest Articles 🎈 ", className = "" }) => {
   const [tabActive, setTabActive] = useState<string>(tabs[0]);
 
   const handleClickTab = (item: string) => {
@@ -29,9 +27,8 @@ const SectionMagazine6: FC<SectionMagazine6Props> = ({
   };
 
   const renderMain = () => {
-    const { featuredImage, author, title, date, desc, href, readingTime } =
-      posts[0];
-    const subPosts = posts.filter((_, i) => i > 0);
+    const { featuredImage, author, title, date, desc, href, readingTime } = posts[0];
+    const subPosts = POSTS.filter((_: any, i: number) => i > 0);
     return (
       <main className="relative">
         {/* Image */}
@@ -55,11 +52,7 @@ const SectionMagazine6: FC<SectionMagazine6Props> = ({
             </div>
 
             <div className="mt-7">
-              <CardAuthor2
-                readingTime={readingTime}
-                date={date}
-                author={author}
-              />
+              <CardAuthor2 readingTime={readingTime} date={date} author={author} />
             </div>
           </div>
         </div>
@@ -87,12 +80,7 @@ const SectionMagazine6: FC<SectionMagazine6Props> = ({
 
   return (
     <div className={`nc-SectionMagazine6 ${className}`}>
-      <HeaderFilter
-        tabActive={tabActive}
-        tabs={tabs}
-        heading={heading}
-        onClickTab={handleClickTab}
-      />
+      <HeaderFilter tabActive={tabActive} tabs={tabs} heading={heading} onClickTab={handleClickTab} />
       {!posts.length && <span>Nothing we found!</span>}
       {posts[0] && renderMain()}
     </div>

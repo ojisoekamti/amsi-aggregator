@@ -33,7 +33,7 @@ const SectionMagazine5: FC<SectionMagazine5Props> = ({ posts, tabs, heading = "L
         {posts[0] && <Card12 post={posts[0]} />}
         <div className="grid grid-cols-1 gap-5 md:gap-7">
           {posts
-            .filter((_, i) => i < 4 && i > 0)
+            .filter((_: any, i: number) => i < 4 && i > 0)
             .map((item, index) => (
               <Card13 key={index} post={item} />
             ))}

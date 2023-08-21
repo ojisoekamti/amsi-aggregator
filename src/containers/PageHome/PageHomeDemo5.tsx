@@ -21,8 +21,8 @@ import SectionMagazine2 from "./SectionMagazine2";
 
 //
 const MAGAZINE1_TABS = ["all", "Garden", "Fitness", "Design"];
-const MAGAZINE1_POSTS = DEMO_POSTS.filter((_, i) => i >= 8 && i < 16);
-const MAGAZINE2_POSTS = DEMO_POSTS.filter((_, i) => i >= 0 && i < 7);
+const MAGAZINE1_POSTS = DEMO_POSTS.filter((_: any, i: number) => i >= 8 && i < 16);
+const MAGAZINE2_POSTS = DEMO_POSTS.filter((_: any, i: number) => i >= 0 && i < 7);
 //
 
 const PageHomeDemo5: React.FC = () => {
@@ -59,27 +59,20 @@ const PageHomeDemo5: React.FC = () => {
             <SectionSliderNewCategories
               heading="Top trending topics"
               subHeading="Discover 233 topics"
-              categories={DEMO_CATEGORIES.filter((_, i) => i < 10)}
+              categories={DEMO_CATEGORIES.filter((_: any, i: number) => i < 10)}
               categoryCardType="card5"
               uniqueSliderClass="PageHomeDemo5"
             />
           </div>
 
           {/* === SECTION 4 === */}
-          <SectionMagazine2
-            className="py-16 lg:py-28"
-            posts={MAGAZINE2_POSTS}
-            tabs={MAGAZINE1_TABS}
-          />
+          <SectionMagazine2 className="py-16 lg:py-28" posts={MAGAZINE2_POSTS} tabs={MAGAZINE1_TABS} />
 
           {/* === SECTION 3 === */}
           <SectionAds />
 
           {/* === SECTION 7 === */}
-          <SectionMagazine7
-            className="py-16 lg:py-28"
-            posts={DEMO_POSTS_GALLERY.filter((_, i) => i < 6)}
-          />
+          <SectionMagazine7 className="py-16 lg:py-28" posts={DEMO_POSTS_GALLERY.filter((_: any, i: number) => i < 6)} />
         </div>
 
         {/* === SECTION 11 === */}
@@ -91,7 +84,7 @@ const PageHomeDemo5: React.FC = () => {
               postCardName="card10V2"
               heading="Explore latest video articles"
               subHeading="Hover on the post card and preview video 🥡"
-              posts={DEMO_POSTS_VIDEO.filter((_, i) => i > 5 && i < 12)}
+              posts={DEMO_POSTS_VIDEO.filter((_: any, i: number) => i > 5 && i < 12)}
               gridClass="md:grid-cols-2 lg:grid-cols-3"
             />
           </div>
@@ -99,10 +92,7 @@ const PageHomeDemo5: React.FC = () => {
 
         <div className="container ">
           {/* === SECTION 5 === */}
-          <SectionGridAuthorBox
-            className="py-16 lg:py-28"
-            authors={DEMO_AUTHORS.filter((_, i) => i < 10)}
-          />
+          <SectionGridAuthorBox className="py-16 lg:py-28" authors={DEMO_AUTHORS.filter((_: any, i: number) => i < 10)} />
 
           {/* === SECTION 8 === */}
           <div className="relative py-16">
@@ -111,12 +101,7 @@ const PageHomeDemo5: React.FC = () => {
           </div>
 
           {/* === SECTION 11 === */}
-          <SectionMagazine4
-            className="py-16 lg:py-28"
-            heading="Life styles 🎨 "
-            posts={MAGAZINE2_POSTS}
-            tabs={MAGAZINE1_TABS}
-          />
+          <SectionMagazine4 className="py-16 lg:py-28" heading="Life styles 🎨 " posts={MAGAZINE2_POSTS} tabs={MAGAZINE1_TABS} />
 
           {/* === SECTION 12 === */}
           <div className="relative py-16">
@@ -125,9 +110,7 @@ const PageHomeDemo5: React.FC = () => {
               postCardName="card11"
               heading=" More design articles"
               subHeading="Over 1118 articles "
-              posts={DEMO_POSTS.filter(
-                (p, i) => i > 3 && i < 25 && p.postType === "standard"
-              )}
+              posts={DEMO_POSTS.filter((p: any, i: number) => i > 3 && i < 25 && p.postType === "standard")}
               sliderStype="style2"
               uniqueSliderClass="PageHomeDemo5"
             />
@@ -142,9 +125,9 @@ const PageHomeDemo5: React.FC = () => {
           {/* === SECTION 17 === */}
           <SectionLatestPosts
             className="pb-16 lg:pb-28"
-            posts={DEMO_POSTS.filter((_, i) => i > 8 && i < 16)}
-            widgetPosts={DEMO_POSTS.filter((_, i) => i > 2 && i < 7)}
-            categories={DEMO_CATEGORIES.filter((_, i) => i > 2 && i < 8)}
+            posts={DEMO_POSTS.filter((_: any, i: number) => i > 8 && i < 16)}
+            widgetPosts={DEMO_POSTS.filter((_: any, i: number) => i > 2 && i < 7)}
+            categories={DEMO_CATEGORIES.filter((_: any, i: number) => i > 2 && i < 8)}
             tags={DEMO_CATEGORIES}
           />
         </div>

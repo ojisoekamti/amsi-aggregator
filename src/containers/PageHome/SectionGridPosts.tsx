@@ -14,7 +14,7 @@ import Card10V2 from "components/Card10/Card10V2";
 import Card15Podcast from "components/Card15Podcast/Card15Podcast";
 
 // OTHER DEMO WILL PASS PROPS
-const postsDemo: PostDataType[] = DEMO_POSTS.filter((_, i) => i > 7 && i < 17);
+const postsDemo: PostDataType[] = DEMO_POSTS.filter((_: any, i: number) => i > 7 && i < 17);
 
 //
 export interface SectionGridPostsProps {
@@ -24,16 +24,7 @@ export interface SectionGridPostsProps {
   heading?: ReactNode;
   subHeading?: ReactNode;
   headingIsCenter?: boolean;
-  postCardName?:
-    | "card3"
-    | "card4"
-    | "card7"
-    | "card9"
-    | "card10"
-    | "card10V2"
-    | "card11"
-    | "card14"
-    | "card15Podcast";
+  postCardName?: "card3" | "card4" | "card7" | "card9" | "card10" | "card10V2" | "card11" | "card14" | "card15Podcast";
 }
 
 const SectionGridPosts: FC<SectionGridPostsProps> = ({
@@ -48,19 +39,11 @@ const SectionGridPosts: FC<SectionGridPostsProps> = ({
   const renderCard = (post: PostDataType) => {
     switch (postCardName) {
       case "card3":
-        return (
-          <Card3
-            key={post.id}
-            className="p-3 sm:p-5 2xl:p-6 [ nc-box-has-hover ] [ nc-dark-box-bg-has-hover ]"
-            post={post}
-          />
-        );
+        return <Card3 key={post.id} className="p-3 sm:p-5 2xl:p-6 [ nc-box-has-hover ] [ nc-dark-box-bg-has-hover ]" post={post} />;
       case "card4":
         return <Card4 key={post.id} post={post} />;
       case "card7":
-        return (
-          <Card7 key={post.id} post={post} ratio="aspect-w-5 aspect-h-5" />
-        );
+        return <Card7 key={post.id} post={post} ratio="aspect-w-5 aspect-h-5" />;
       case "card9":
         return <Card9 key={post.id} post={post} />;
       case "card10":
@@ -83,9 +66,7 @@ const SectionGridPosts: FC<SectionGridPostsProps> = ({
       <Heading desc={subHeading} isCenter={headingIsCenter}>
         {heading}
       </Heading>
-      <div className={`grid gap-6 md:gap-8 ${gridClass}`}>
-        {posts.map((post) => renderCard(post))}
-      </div>
+      <div className={`grid gap-6 md:gap-8 ${gridClass}`}>{posts.map((post) => renderCard(post))}</div>
       <div className="flex mt-20 justify-center items-center">
         <ButtonPrimary>Show me more</ButtonPrimary>
       </div>

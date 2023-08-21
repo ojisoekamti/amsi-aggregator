@@ -19,15 +19,14 @@ import SectionMagazine6 from "./SectionMagazine6";
 
 // DEMO POST FOR MAGAZINE SECTION
 const MAGAZINE1_TABS = ["all", "Garden", "Fitness", "Design"];
-const MAGAZINE1_POSTS = DEMO_POSTS.filter((_, i) => i >= 8 && i < 16);
+const MAGAZINE1_POSTS = DEMO_POSTS.filter((_: any, i: number) => i >= 8 && i < 16);
 //
 const TRAVEL_SUBCATS: TaxonomyType[] = [
   {
     id: 1,
     name: "New York",
     href: "/archive/the-demo-archive-slug",
-    thumbnail:
-      "https://images.pexels.com/photos/2179602/pexels-photo-2179602.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    thumbnail: "https://images.pexels.com/photos/2179602/pexels-photo-2179602.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     count: 132,
     color: "pink",
     taxonomy: "category",
@@ -36,8 +35,7 @@ const TRAVEL_SUBCATS: TaxonomyType[] = [
     id: 2,
     name: "Dubai",
     href: "/archive/the-demo-archive-slug",
-    thumbnail:
-      "https://images.pexels.com/photos/2041556/pexels-photo-2041556.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+    thumbnail: "https://images.pexels.com/photos/2041556/pexels-photo-2041556.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
     count: 122,
     color: "pink",
     taxonomy: "category",
@@ -46,8 +44,7 @@ const TRAVEL_SUBCATS: TaxonomyType[] = [
     id: 3,
     name: "Paris",
     href: "/archive/the-demo-archive-slug",
-    thumbnail:
-      "https://images.pexels.com/photos/739407/pexels-photo-739407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    thumbnail: "https://images.pexels.com/photos/739407/pexels-photo-739407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     count: 112,
     color: "pink",
     taxonomy: "category",
@@ -56,8 +53,7 @@ const TRAVEL_SUBCATS: TaxonomyType[] = [
     id: 6,
     name: "London",
     href: "/archive/the-demo-archive-slug",
-    thumbnail:
-      "https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+    thumbnail: "https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
     count: 218,
     color: "pink",
     taxonomy: "category",
@@ -66,8 +62,7 @@ const TRAVEL_SUBCATS: TaxonomyType[] = [
     id: 4,
     name: "Tokyo",
     href: "/archive/the-demo-archive-slug",
-    thumbnail:
-      "https://images.pexels.com/photos/4151484/pexels-photo-4151484.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+    thumbnail: "https://images.pexels.com/photos/4151484/pexels-photo-4151484.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
     count: 311,
     color: "pink",
     taxonomy: "category",
@@ -76,8 +71,7 @@ const TRAVEL_SUBCATS: TaxonomyType[] = [
     id: 5,
     name: "Maldives",
     href: "/archive/the-demo-archive-slug",
-    thumbnail:
-      "https://images.pexels.com/photos/3250613/pexels-photo-3250613.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    thumbnail: "https://images.pexels.com/photos/3250613/pexels-photo-3250613.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     count: 112,
     color: "pink",
     taxonomy: "category",
@@ -120,11 +114,7 @@ const PageHomeDemo4: React.FC = () => {
 
           {/* ======= START CONTAINER ============= */}
           <div className="container relative">
-            <SectionTrending
-              heading=""
-              className="py-16 lg:py-28"
-              posts={DEMO_POSTS.filter((_, i) => i < 8)}
-            />
+            <SectionTrending heading="" className="py-16 lg:py-28" posts={DEMO_POSTS.filter((_: any, i: number) => i < 8)} />
 
             {/* SECTION 1 */}
             <div className="relative py-16">
@@ -137,12 +127,7 @@ const PageHomeDemo4: React.FC = () => {
               />
             </div>
 
-            <SectionMagazine6
-              className="py-16 lg:py-28"
-              heading="🧩 Editor Picks"
-              posts={MAGAZINE1_POSTS}
-              tabs={MAGAZINE1_TABS}
-            />
+            <SectionMagazine6 className="py-16 lg:py-28" heading="🧩 Editor Picks" posts={MAGAZINE1_POSTS} tabs={MAGAZINE1_TABS} />
 
             {/* SECTION 3 */}
             <div className="relative py-16">
@@ -150,7 +135,7 @@ const PageHomeDemo4: React.FC = () => {
               <SectionSliderNewAuthors
                 heading="Newest authors"
                 subHeading="Say hello to future creator potentials"
-                authors={DEMO_AUTHORS.filter((_, i) => i < 10)}
+                authors={DEMO_AUTHORS.filter((_: any, i: number) => i < 10)}
                 uniqueSliderClass="PageHomeDemo4"
               />
             </div>
@@ -172,16 +157,13 @@ const PageHomeDemo4: React.FC = () => {
                 postCardName="card10V2"
                 heading="Explore latest video articles"
                 subHeading="Hover on the post card and preview video 🥡"
-                posts={DEMO_POSTS_VIDEO.filter((_, i) => i > 5 && i < 12)}
+                posts={DEMO_POSTS_VIDEO.filter((_: any, i: number) => i > 5 && i < 12)}
                 gridClass="sm:grid-cols-2 lg:grid-cols-3"
               />
             </div>
 
             {/* === SECTION 7 === */}
-            <SectionBecomeAnAuthor
-              className="py-16 lg:py-28"
-              rightImg={becomAuthorImg}
-            />
+            <SectionBecomeAnAuthor className="py-16 lg:py-28" rightImg={becomAuthorImg} />
           </div>
 
           <div className="dark bg-neutral-900 dark:bg-black dark:bg-opacity-20 text-neutral-100">
@@ -191,7 +173,7 @@ const PageHomeDemo4: React.FC = () => {
                 postCardName="card11"
                 heading="Explore other latest articles"
                 subHeading="Explore 1129 other articles"
-                posts={DEMO_POSTS.filter((_, i) => i > 5 && i < 18)}
+                posts={DEMO_POSTS.filter((_: any, i: number) => i > 5 && i < 18)}
                 gridClass="sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8"
               />
             </div>

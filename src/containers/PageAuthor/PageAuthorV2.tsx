@@ -22,7 +22,7 @@ import SectionSliderNewAuthors from "components/SectionSliderNewAthors/SectionSl
 export interface PageAuthorV2Props {
   className?: string;
 }
-const posts: PostDataType[] = DEMO_POSTS.filter((_, i) => i < 12);
+const posts: PostDataType[] = DEMO_POSTS.filter((_: any, i: number) => i < 12);
 const AUTHOR: PostAuthorType = DEMO_AUTHORS[0];
 const FILTERS = [
   { name: "Most Recent" },
@@ -57,12 +57,8 @@ const PageAuthorV2: FC<PageAuthorV2Props> = ({ className = "" }) => {
             sizeClass="w-20 h-20 text-lg lg:w-28 lg:h-28 lg:text-xl"
             radius="rounded-3xl"
           />
-          <h2 className="block align-middle mt-4 font-semibold text-2xl text-neutral-900 lg:text-3xl dark:text-neutral-100">
-            {AUTHOR.displayName}
-          </h2>
-          <span className="mt-2 block text-sm text-neutral-6000 dark:text-neutral-300 md:text-base">
-            {AUTHOR.desc}
-          </span>
+          <h2 className="block align-middle mt-4 font-semibold text-2xl text-neutral-900 lg:text-3xl dark:text-neutral-100">{AUTHOR.displayName}</h2>
+          <span className="mt-2 block text-sm text-neutral-6000 dark:text-neutral-300 md:text-base">{AUTHOR.desc}</span>
           <SocialsList className="mt-3" />
         </header>
       </div>
@@ -74,11 +70,7 @@ const PageAuthorV2: FC<PageAuthorV2Props> = ({ className = "" }) => {
           <div className="flex flex-col sm:items-center sm:justify-between sm:flex-row">
             <Nav className="sm:space-x-2">
               {TABS.map((item, index) => (
-                <NavItem
-                  key={index}
-                  isActive={tabActive === item}
-                  onClick={() => handleClickTab(item)}
-                >
+                <NavItem key={index} isActive={tabActive === item} onClick={() => handleClickTab(item)}>
                   {item}
                 </NavItem>
               ))}
@@ -107,9 +99,7 @@ const PageAuthorV2: FC<PageAuthorV2Props> = ({ className = "" }) => {
         {/* === SECTION 5 === */}
         <div className="relative py-16">
           <BackgroundSection />
-          <SectionGridCategoryBox
-            categories={DEMO_CATEGORIES.filter((_, i) => i < 10)}
-          />
+          <SectionGridCategoryBox categories={DEMO_CATEGORIES.filter((_: any, i: number) => i < 10)} />
           <div className="text-center mx-auto mt-10 md:mt-16">
             <ButtonSecondary>Show me more</ButtonSecondary>
           </div>
@@ -119,7 +109,7 @@ const PageAuthorV2: FC<PageAuthorV2Props> = ({ className = "" }) => {
         <SectionSliderNewAuthors
           heading="Top elite authors"
           subHeading="Discover our elite writers"
-          authors={DEMO_AUTHORS.filter((_, i) => i < 10)}
+          authors={DEMO_AUTHORS.filter((_: any, i: number) => i < 10)}
           uniqueSliderClass="PageAuthorV2"
         />
 

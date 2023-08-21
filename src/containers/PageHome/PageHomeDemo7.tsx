@@ -9,12 +9,7 @@ import BackgroundSection from "components/BackgroundSection/BackgroundSection";
 import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
 import SectionGridAuthorBox from "components/SectionGridAuthorBox/SectionGridAuthorBox";
 import { PostDataType } from "data/types";
-import {
-  DEMO_POSTS,
-  DEMO_POSTS_AUDIO,
-  DEMO_POSTS_GALLERY,
-  DEMO_POSTS_VIDEO,
-} from "data/posts";
+import { DEMO_POSTS, DEMO_POSTS_AUDIO, DEMO_POSTS_GALLERY, DEMO_POSTS_VIDEO } from "data/posts";
 import { DEMO_CATEGORIES } from "data/taxonomies";
 import { DEMO_AUTHORS } from "data/authors";
 import SectionBecomeAnAuthor from "components/SectionBecomeAnAuthor/SectionBecomeAnAuthor";
@@ -32,8 +27,8 @@ import BgGlassmorphism from "components/BgGlassmorphism/BgGlassmorphism";
 const POSTS: PostDataType[] = DEMO_POSTS;
 //
 const MAGAZINE1_TABS = ["all", "Garden", "Fitness", "Design"];
-const MAGAZINE1_POSTS = DEMO_POSTS.filter((_, i) => i >= 8 && i < 16);
-const MAGAZINE2_POSTS = DEMO_POSTS.filter((_, i) => i >= 0 && i < 7);
+const MAGAZINE1_POSTS = DEMO_POSTS.filter((_: any, i: number) => i >= 8 && i < 16);
+const MAGAZINE2_POSTS = DEMO_POSTS.filter((_: any, i: number) => i >= 0 && i < 7);
 //
 
 const PageHomeDemo7: React.FC = () => {
@@ -54,15 +49,8 @@ const PageHomeDemo7: React.FC = () => {
       <Helmet>
         <title>Home || Blog Magazine React Template</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        ></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet"></link>
       </Helmet>
 
       {/* ======== ALL SECTIONS ======== */}
@@ -73,10 +61,7 @@ const PageHomeDemo7: React.FC = () => {
         {/* ======= START CONTAINER ============= */}
         <div className="container relative">
           {/* === SECTION  === */}
-          <SectionLargeSlider
-            className="pt-10 pb-16 md:py-16 lg:pb-28 lg:pt-24 "
-            posts={POSTS.filter((_, i) => i < 3)}
-          />
+          <SectionLargeSlider className="pt-10 pb-16 md:py-16 lg:pb-28 lg:pt-24 " posts={POSTS.filter((_: any, i: number) => i < 3)} />
 
           {/* === SECTION  === */}
           <div className="relative py-16">
@@ -84,7 +69,7 @@ const PageHomeDemo7: React.FC = () => {
             <SectionSliderNewAuthors
               heading="Newest authors"
               subHeading="Say hello to future creator potentials"
-              authors={DEMO_AUTHORS.filter((_, i) => i < 10)}
+              authors={DEMO_AUTHORS.filter((_: any, i: number) => i < 10)}
               uniqueSliderClass="PageHomeDemo7"
             />
           </div>
@@ -94,7 +79,7 @@ const PageHomeDemo7: React.FC = () => {
             className="py-16 lg:py-28"
             heading="Top trending topics"
             subHeading="Discover 233 topics"
-            categories={DEMO_CATEGORIES.filter((_, i) => i < 10)}
+            categories={DEMO_CATEGORIES.filter((_: any, i: number) => i < 10)}
             categoryCardType="card4"
             uniqueSliderClass="PageHomeDemo7"
           />
@@ -107,26 +92,19 @@ const PageHomeDemo7: React.FC = () => {
               heading="Explore latest audio articles"
               subHeading="Click on the icon to enjoy the music or podcast 🎧"
               sliderStype="style2"
-              posts={DEMO_POSTS_AUDIO.filter((_, i) => i > 3 && i < 10)}
+              posts={DEMO_POSTS_AUDIO.filter((_: any, i: number) => i > 3 && i < 10)}
               uniqueSliderClass="PageHomeDemo7_section1"
             />
           </div>
 
           {/* === SECTION 4 === */}
-          <SectionMagazine1
-            className="py-16 lg:py-28"
-            posts={MAGAZINE1_POSTS}
-            tabs={MAGAZINE1_TABS}
-          />
+          <SectionMagazine1 className="py-16 lg:py-28" posts={MAGAZINE1_POSTS} tabs={MAGAZINE1_TABS} />
 
           {/* === SECTION 3 === */}
           <SectionAds />
 
           {/* === SECTION 7 === */}
-          <SectionMagazine7
-            className="py-16 lg:py-28"
-            posts={DEMO_POSTS_GALLERY.filter((_, i) => i < 6)}
-          />
+          <SectionMagazine7 className="py-16 lg:py-28" posts={DEMO_POSTS_GALLERY.filter((_: any, i: number) => i < 6)} />
         </div>
 
         {/* === SECTION 11 === */}
@@ -138,7 +116,7 @@ const PageHomeDemo7: React.FC = () => {
               postCardName="card10V2"
               heading="Explore latest video articles"
               subHeading="Hover on the post card and preview video 🥡"
-              posts={DEMO_POSTS_VIDEO.filter((_, i) => i > 5 && i < 12)}
+              posts={DEMO_POSTS_VIDEO.filter((_: any, i: number) => i > 5 && i < 12)}
               gridClass="md:grid-cols-2 lg:grid-cols-3"
             />
           </div>
@@ -146,24 +124,16 @@ const PageHomeDemo7: React.FC = () => {
 
         <div className="container ">
           {/* === SECTION 9 === */}
-          <SectionMagazine8
-            className="py-16 lg:py-28"
-            posts={DEMO_POSTS_AUDIO.filter((_, i) => i < 6)}
-          />
+          <SectionMagazine8 className="py-16 lg:py-28" posts={DEMO_POSTS_AUDIO.filter((_: any, i: number) => i < 6)} />
 
           {/* === SECTION 9 === */}
           <div className="relative py-16">
             <BackgroundSection />
-            <SectionMagazine9
-              posts={DEMO_POSTS_AUDIO.filter((_, i) => i >= 6 && i < 16)}
-            />
+            <SectionMagazine9 posts={DEMO_POSTS_AUDIO.filter((_: any, i: number) => i >= 6 && i < 16)} />
           </div>
 
           {/* === SECTION 5 === */}
-          <SectionGridAuthorBox
-            className="py-16 lg:py-28"
-            authors={DEMO_AUTHORS.filter((_, i) => i < 10)}
-          />
+          <SectionGridAuthorBox className="py-16 lg:py-28" authors={DEMO_AUTHORS.filter((_: any, i: number) => i < 10)} />
 
           {/* === SECTION 8 === */}
           <div className="relative py-16">
@@ -172,12 +142,7 @@ const PageHomeDemo7: React.FC = () => {
           </div>
 
           {/* === SECTION 11 === */}
-          <SectionMagazine4
-            className="py-16 lg:py-28"
-            heading="Life styles 🎨 "
-            posts={MAGAZINE2_POSTS}
-            tabs={MAGAZINE1_TABS}
-          />
+          <SectionMagazine4 className="py-16 lg:py-28" heading="Life styles 🎨 " posts={MAGAZINE2_POSTS} tabs={MAGAZINE1_TABS} />
 
           {/* === SECTION 12 === */}
           <div className="relative py-16">
@@ -186,9 +151,7 @@ const PageHomeDemo7: React.FC = () => {
               postCardName="card11"
               heading=" More design articles"
               subHeading="Over 1118 articles "
-              posts={DEMO_POSTS.filter(
-                (p, i) => i > 3 && i < 25 && p.postType === "standard"
-              )}
+              posts={DEMO_POSTS.filter((p: any, i: number) => i > 3 && i < 25 && p.postType === "standard")}
               sliderStype="style2"
               uniqueSliderClass="PageHomeDemo7_section2"
             />
@@ -203,9 +166,9 @@ const PageHomeDemo7: React.FC = () => {
           {/* === SECTION 17 === */}
           <SectionLatestPosts
             className="pb-16 lg:pb-28"
-            posts={DEMO_POSTS.filter((_, i) => i > 8 && i < 16)}
-            widgetPosts={DEMO_POSTS.filter((_, i) => i > 2 && i < 7)}
-            categories={DEMO_CATEGORIES.filter((_, i) => i > 2 && i < 8)}
+            posts={DEMO_POSTS.filter((_: any, i: number) => i > 8 && i < 16)}
+            widgetPosts={DEMO_POSTS.filter((_: any, i: number) => i > 2 && i < 7)}
+            categories={DEMO_CATEGORIES.filter((_: any, i: number) => i > 2 && i < 8)}
             tags={DEMO_CATEGORIES}
           />
         </div>

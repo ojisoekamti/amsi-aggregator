@@ -25,10 +25,10 @@ export interface PageSearchV2Props {
   className?: string;
 }
 
-const posts: PostDataType[] = DEMO_POSTS.filter((_, i) => i < 12);
-const cats = DEMO_CATEGORIES.filter((_, i) => i < 15);
-const tags = DEMO_CATEGORIES.filter((_, i) => i < 32);
-const authors = DEMO_AUTHORS.filter((_, i) => i < 12);
+const posts: PostDataType[] = DEMO_POSTS.filter((_: any, i: number) => i < 12);
+const cats = DEMO_CATEGORIES.filter((_: any, i: number) => i < 15);
+const tags = DEMO_CATEGORIES.filter((_: any, i: number) => i < 32);
+const authors = DEMO_AUTHORS.filter((_: any, i: number) => i < 12);
 
 const FILTERS = [
   { name: "Most Recent" },
@@ -60,10 +60,7 @@ const PageSearchV2: FC<PageSearchV2Props> = ({ className = "" }) => {
       <div className="container">
         <header className="max-w-2xl mx-auto -mt-10 flex flex-col lg:-mt-7">
           <form className="relative" action="" method="post">
-            <label
-              htmlFor="search-input"
-              className="text-neutral-500 dark:text-neutral-300"
-            >
+            <label htmlFor="search-input" className="text-neutral-500 dark:text-neutral-300">
               <span className="sr-only">Search all icons</span>
               <Input
                 id="search-input"
@@ -87,14 +84,8 @@ const PageSearchV2: FC<PageSearchV2Props> = ({ className = "" }) => {
             </label>
           </form>
           <span className="block text-sm mt-4 text-neutral-500 dark:text-neutral-300">
-            We found{" "}
-            <strong className="font-semibold text-neutral-800 dark:text-neutral-100">
-              1135
-            </strong>{" "}
-            results articles for{" "}
-            <strong className="font-semibold text-neutral-800 dark:text-neutral-100">
-              "{s}"
-            </strong>
+            We found <strong className="font-semibold text-neutral-800 dark:text-neutral-100">1135</strong> results articles for{" "}
+            <strong className="font-semibold text-neutral-800 dark:text-neutral-100">"{s}"</strong>
           </span>
         </header>
       </div>
@@ -102,16 +93,9 @@ const PageSearchV2: FC<PageSearchV2Props> = ({ className = "" }) => {
         <main>
           {/* TABS FILTER */}
           <div className="flex flex-col sm:items-center sm:justify-between sm:flex-row ">
-            <Nav
-              containerClassName="w-full overflow-x-auto hiddenScrollbar"
-              className=" sm:space-x-2"
-            >
+            <Nav containerClassName="w-full overflow-x-auto hiddenScrollbar" className=" sm:space-x-2">
               {TABS.map((item, index) => (
-                <NavItem
-                  key={index}
-                  isActive={tabActive === item}
-                  onClick={() => handleClickTab(item)}
-                >
+                <NavItem key={index} isActive={tabActive === item} onClick={() => handleClickTab(item)}>
                   {item}
                 </NavItem>
               ))}
@@ -167,9 +151,7 @@ const PageSearchV2: FC<PageSearchV2Props> = ({ className = "" }) => {
         {/* === SECTION 5 === */}
         <div className="relative py-16">
           <BackgroundSection />
-          <SectionGridCategoryBox
-            categories={DEMO_CATEGORIES.filter((_, i) => i < 10)}
-          />
+          <SectionGridCategoryBox categories={DEMO_CATEGORIES.filter((_: any, i: number) => i < 10)} />
           <div className="text-center mx-auto mt-10 md:mt-16">
             <ButtonSecondary>Show me more</ButtonSecondary>
           </div>
@@ -179,7 +161,7 @@ const PageSearchV2: FC<PageSearchV2Props> = ({ className = "" }) => {
         <SectionSliderNewAuthors
           heading="Top elite authors"
           subHeading="Discover our elite writers"
-          authors={DEMO_AUTHORS.filter((_, i) => i < 10)}
+          authors={DEMO_AUTHORS.filter((_: any, i: number) => i < 10)}
           uniqueSliderClass="PageSearchV2"
         />
 

@@ -702,6 +702,15 @@
   "resolved" "https://registry.npmjs.org/aws4/-/aws4-1.11.0.tgz"
   "version" "1.11.0"
 
+"axios@^1.4.0":
+  "integrity" "sha512-S4XCWMEmzvo64T9GfvQDOXgYRDJ/wsSZc7Jvdgx5u1sd0JwsuPLqb3SYmusag+edF6ziyMensPVqLTSc1PiSEA=="
+  "resolved" "https://registry.npmjs.org/axios/-/axios-1.4.0.tgz"
+  "version" "1.4.0"
+  dependencies:
+    "follow-redirects" "^1.15.0"
+    "form-data" "^4.0.0"
+    "proxy-from-env" "^1.1.0"
+
 "balanced-match@^1.0.0":
   "integrity" "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw=="
   "resolved" "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz"
@@ -794,9 +803,9 @@
   "version" "5.3.1"
 
 "caniuse-lite@^1.0.30001297", "caniuse-lite@^1.0.30001313":
-  "integrity" "sha512-xIZLh8gBm4dqNX0gkzrBeyI86J2eCjWzYAs40q88smG844YIrN4tVQl/RhquHvKEKImWWFIVh1Lxe5n1G/N+GQ=="
-  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001317.tgz"
-  "version" "1.0.30001317"
+  "integrity" "sha512-TKiyTVZxJGhsTszLuzb+6vUZSjVOAhClszBr2Ta2k9IwtNBT/4dzmL6aywt0HCgEZlmwJzXJd8yNiob6HgwTRg=="
+  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001522.tgz"
+  "version" "1.0.30001522"
 
 "caseless@~0.12.0":
   "integrity" "sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw= sha512-4tYFyifaFfGacoiObjJegolkwSU4xQNGbVgUiNYVUxbQ2x2lUsFvY4hVgVzGiIe6WLOPqycWXA40l+PWsxthUw=="
@@ -883,7 +892,7 @@
   "resolved" "https://registry.npmjs.org/color-support/-/color-support-1.1.3.tgz"
   "version" "1.1.3"
 
-"combined-stream@^1.0.6", "combined-stream@~1.0.6":
+"combined-stream@^1.0.6", "combined-stream@^1.0.8", "combined-stream@~1.0.6":
   "integrity" "sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg=="
   "resolved" "https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz"
   "version" "1.0.8"
@@ -1192,10 +1201,24 @@
     "locate-path" "^5.0.0"
     "path-exists" "^4.0.0"
 
+"follow-redirects@^1.15.0":
+  "integrity" "sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA=="
+  "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.2.tgz"
+  "version" "1.15.2"
+
 "forever-agent@~0.6.1":
   "integrity" "sha1-+8cfDEGt6zf5bFd60e1C2P2sypE= sha512-j0KLYPhm6zeac4lz3oJ3o65qvgQCcPubiyotZrXqEaG4hNagNYO8qdlUrX5vwqv9ohqeT/Z3j6+yW067yWWdUw=="
   "resolved" "https://registry.npmjs.org/forever-agent/-/forever-agent-0.6.1.tgz"
   "version" "0.6.1"
+
+"form-data@^4.0.0":
+  "integrity" "sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww=="
+  "resolved" "https://registry.npmjs.org/form-data/-/form-data-4.0.0.tgz"
+  "version" "4.0.0"
+  dependencies:
+    "asynckit" "^0.4.0"
+    "combined-stream" "^1.0.8"
+    "mime-types" "^2.1.12"
 
 "form-data@~2.3.2":
   "integrity" "sha512-1lLKB2Mu3aGP1Q/2eCOx0fNbRMe7XdwktwOruhfqqd0rIJWwN4Dh+E3hrPSlDCXnSR7UtZ1N38rVXm+6+MEhJQ=="
@@ -2252,6 +2275,11 @@
     "object-assign" "^4.1.1"
     "react-is" "^16.13.1"
 
+"proxy-from-env@^1.1.0":
+  "integrity" "sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg=="
+  "resolved" "https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-1.1.0.tgz"
+  "version" "1.1.0"
+
 "psl@^1.1.28":
   "integrity" "sha512-RIdOzyoavK+hA18OGGWDqUTsCLhtA7IcZ/6NCs4fFJaHBDab+pDDmDIByWFRQJq2Cd7r1OoQxBGKOaztq+hjIQ=="
   "resolved" "https://registry.npmjs.org/psl/-/psl-1.8.0.tgz"
@@ -2302,6 +2330,11 @@
   "integrity" "sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA=="
   "resolved" "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.0.tgz"
   "version" "3.2.0"
+
+"react-fetch-hook@^1.9.5":
+  "integrity" "sha512-LhTwUk0iYQ4SUl2laQr5Jc2fk/K4B6ezntDWWBNdlag/cB3n2RYshofIL3bOghE5FEfkoDi6BqGD/YIwqW1/8w=="
+  "resolved" "https://registry.npmjs.org/react-fetch-hook/-/react-fetch-hook-1.9.5.tgz"
+  "version" "1.9.5"
 
 "react-helmet@^6.1.0":
   "integrity" "sha512-4uMzEY9nlDlgxr61NL3XbKRy1hEkXmKNXhjbAIOVw5vcFrsdYbH2FEwcNyWvWinl103nXgzYNlns9ca+8kFiWw=="
@@ -2395,7 +2428,7 @@
   "resolved" "https://registry.npmjs.org/react-side-effect/-/react-side-effect-2.1.1.tgz"
   "version" "2.1.1"
 
-"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^16 || ^17 || ^18", "react@^16.3.0 || ^17.0.0", "react@^16.8.3 || ^17", "react@^16.9.0 || ^17.0.0 || 18.0.0-beta", "react@^17.0.2", "react@>= 16", "react@>=15", "react@>=16", "react@>=16.3.0", "react@>=16.6.0", "react@17.0.2":
+"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^16 || ^17 || ^18", "react@^16.3.0 || ^17.0.0", "react@^16.8.3 || ^17", "react@^16.9.0 || ^17.0.0 || 18.0.0-beta", "react@^17.0.2", "react@>= 16", "react@>=15", "react@>=16", "react@>=16.3.0", "react@>=16.6.0", "react@>=16.8.0 <19.0.0", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"

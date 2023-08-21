@@ -14,15 +14,11 @@ import ButtonPrimary from "components/Button/ButtonPrimary";
 
 // THIS IS DEMO FOR MAIN DEMO
 // OTHER DEMO WILL PASS PROPS
-const postsDemo: PostDataType[] = DEMO_POSTS.filter((_, i) => i > 7 && i < 17);
-const widgetPostsDemo: PostDataType[] = DEMO_POSTS.filter(
-  (_, i) => i > 2 && i < 7
-);
-const tagsDemo = DEMO_TAGS.filter((_, i) => i > 5);
-const categoriesDemo: TaxonomyType[] = DEMO_CATEGORIES.filter(
-  (_, i) => i > 7 && i < 13
-);
-const authorsDemo: PostAuthorType[] = DEMO_AUTHORS.filter((_, i) => i < 5);
+const postsDemo: PostDataType[] = DEMO_POSTS.filter((_: any, i: number) => i > 7 && i < 17);
+const widgetPostsDemo: PostDataType[] = DEMO_POSTS.filter((_: any, i: number) => i > 2 && i < 7);
+const tagsDemo = DEMO_TAGS.filter((_: any, i: number) => i > 5);
+const categoriesDemo: TaxonomyType[] = DEMO_CATEGORIES.filter((_: any, i: number) => i > 7 && i < 13);
+const authorsDemo: PostAuthorType[] = DEMO_AUTHORS.filter((_: any, i: number) => i < 5);
 
 //
 export interface SectionLatestPostsProps {
@@ -44,9 +40,7 @@ const SectionLatestPosts: FC<SectionLatestPostsProps> = ({
     <div className="nc-SectionLatestPosts">
       <div className="container flex flex-col py-10 lg:flex-row lg:py-14">
         <div className="w-full lg:w-3/5 xl:w-2/3 xl:pr-14 2xl:pr-20">
-          <Heading className="mb-10 text-neutral-900 dark:text-neutral-50">
-            🎉 Latest Articles
-          </Heading>
+          <Heading className="mb-10 text-neutral-900 dark:text-neutral-50">🎉 Latest Articles</Heading>
           <div className="space-y-12">
             {posts.map((post) => (
               <Card3 size="large" key={post.id} post={post} />

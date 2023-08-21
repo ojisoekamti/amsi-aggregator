@@ -22,7 +22,7 @@ import NcImage from "components/NcImage/NcImage";
 export interface PageAuthorProps {
   className?: string;
 }
-const posts: PostDataType[] = DEMO_POSTS.filter((_, i) => i < 12);
+const posts: PostDataType[] = DEMO_POSTS.filter((_: any, i: number) => i < 12);
 const AUTHOR: PostAuthorType = DEMO_AUTHORS[0];
 const FILTERS = [
   { name: "Most Recent" },
@@ -67,12 +67,8 @@ const PageAuthor: FC<PageAuthorProps> = ({ className = "" }) => {
               radius="rounded-full"
             />
             <div className="mt-5 sm:mt-0 sm:ml-8 space-y-4 max-w-lg">
-              <h2 className="inline-block text-2xl sm:text-3xl md:text-4xl font-semibold">
-                {AUTHOR.displayName}
-              </h2>
-              <span className="block text-sm text-neutral-6000 dark:text-neutral-300 md:text-base">
-                {AUTHOR.desc}
-              </span>
+              <h2 className="inline-block text-2xl sm:text-3xl md:text-4xl font-semibold">{AUTHOR.displayName}</h2>
+              <span className="block text-sm text-neutral-6000 dark:text-neutral-300 md:text-base">{AUTHOR.desc}</span>
               <SocialsList />
             </div>
           </div>
@@ -86,11 +82,7 @@ const PageAuthor: FC<PageAuthorProps> = ({ className = "" }) => {
           <div className="flex flex-col sm:items-center sm:justify-between sm:flex-row">
             <Nav className="sm:space-x-2">
               {TABS.map((item, index) => (
-                <NavItem
-                  key={index}
-                  isActive={tabActive === item}
-                  onClick={() => handleClickTab(item)}
-                >
+                <NavItem key={index} isActive={tabActive === item} onClick={() => handleClickTab(item)}>
                   {item}
                 </NavItem>
               ))}
@@ -118,9 +110,7 @@ const PageAuthor: FC<PageAuthorProps> = ({ className = "" }) => {
         {/* === SECTION 5 === */}
         <div className="relative py-16">
           <BackgroundSection />
-          <SectionGridCategoryBox
-            categories={DEMO_CATEGORIES.filter((_, i) => i < 10)}
-          />
+          <SectionGridCategoryBox categories={DEMO_CATEGORIES.filter((_: any, i: number) => i < 10)} />
           <div className="text-center mx-auto mt-10 md:mt-16">
             <ButtonSecondary>Show me more</ButtonSecondary>
           </div>
@@ -131,7 +121,7 @@ const PageAuthor: FC<PageAuthorProps> = ({ className = "" }) => {
           heading="Top elite authors"
           subHeading="Discover our elite writers"
           uniqueSliderClass="PageAuthor__slider"
-          authors={DEMO_AUTHORS.filter((_, i) => i < 10)}
+          authors={DEMO_AUTHORS.filter((_: any, i: number) => i < 10)}
         />
 
         {/* SUBCRIBES */}

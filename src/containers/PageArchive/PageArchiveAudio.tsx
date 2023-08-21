@@ -23,7 +23,7 @@ export interface PageArchiveAudioProps {
 }
 
 // Tag and category have same data type - we will use one demo data
-const posts: PostDataType[] = DEMO_POSTS_AUDIO.filter((_, i) => i < 12);
+const posts: PostDataType[] = DEMO_POSTS_AUDIO.filter((_: any, i: number) => i < 12);
 
 const PageArchiveAudio: FC<PageArchiveAudioProps> = ({ className = "" }) => {
   const PAGE_DATA: TaxonomyType = DEMO_CATEGORIES[1];
@@ -37,7 +37,7 @@ const PageArchiveAudio: FC<PageArchiveAudioProps> = ({ className = "" }) => {
   ];
 
   const renderSection = (sectionPosts: PostDataType[]) => {
-    const loopPosts = sectionPosts.filter((_, i) => i > 2);
+    const loopPosts = sectionPosts.filter((_: any, i: number) => i > 2);
     return (
       <div className="mt-8 lg:mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         <Card16Podcast post={sectionPosts[0]} />
@@ -55,10 +55,7 @@ const PageArchiveAudio: FC<PageArchiveAudioProps> = ({ className = "" }) => {
   };
 
   return (
-    <div
-      className={`nc-PageArchiveAudio overflow-hidden ${className}`}
-      data-nc-id="PageArchiveAudio"
-    >
+    <div className={`nc-PageArchiveAudio overflow-hidden ${className}`} data-nc-id="PageArchiveAudio">
       <Helmet>
         <title>Archive || Blog Magazine React Template</title>
       </Helmet>
@@ -72,12 +69,8 @@ const PageArchiveAudio: FC<PageArchiveAudioProps> = ({ className = "" }) => {
             className="object-cover w-full h-full"
           />
           <div className="absolute inset-0 bg-black text-white bg-opacity-30 flex flex-col items-center justify-center">
-            <h2 className="inline-block align-middle ml-3 text-5xl font-semibold md:text-7xl ">
-              {PAGE_DATA.name}
-            </h2>
-            <span className="block mt-4 text-neutral-300">
-              {PAGE_DATA.count} Audio articles
-            </span>
+            <h2 className="inline-block align-middle ml-3 text-5xl font-semibold md:text-7xl ">{PAGE_DATA.name}</h2>
+            <span className="block mt-4 text-neutral-300">{PAGE_DATA.count} Audio articles</span>
           </div>
         </div>
       </div>
@@ -97,7 +90,7 @@ const PageArchiveAudio: FC<PageArchiveAudioProps> = ({ className = "" }) => {
           </div>
 
           {/* LOOP ITEMS */}
-          {renderSection(posts.filter((_, i) => i < 19))}
+          {renderSection(posts.filter((_: any, i: number) => i < 19))}
 
           {/* PAGINATIONS */}
           <div className="flex flex-col mt-12 lg:mt-16 space-y-5 sm:space-y-0 sm:space-x-3 sm:flex-row sm:justify-between sm:items-center">
@@ -110,9 +103,7 @@ const PageArchiveAudio: FC<PageArchiveAudioProps> = ({ className = "" }) => {
         {/* === SECTION 5 === */}
         <div className="relative py-16">
           <BackgroundSection />
-          <SectionGridCategoryBox
-            categories={DEMO_CATEGORIES.filter((_, i) => i < 10)}
-          />
+          <SectionGridCategoryBox categories={DEMO_CATEGORIES.filter((_: any, i: number) => i < 10)} />
           <div className="text-center mx-auto mt-10 md:mt-16">
             <ButtonSecondary>Show me more</ButtonSecondary>
           </div>
@@ -122,7 +113,7 @@ const PageArchiveAudio: FC<PageArchiveAudioProps> = ({ className = "" }) => {
         <SectionSliderNewAuthors
           heading="Top elite authors"
           subHeading="Discover our elite writers"
-          authors={DEMO_AUTHORS.filter((_, i) => i < 10)}
+          authors={DEMO_AUTHORS.filter((_: any, i: number) => i < 10)}
           uniqueSliderClass="PageArchiveAudio"
         />
 

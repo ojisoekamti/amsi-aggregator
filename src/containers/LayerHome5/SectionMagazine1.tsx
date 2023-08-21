@@ -11,12 +11,7 @@ export interface SectionMagazine1Props {
   className?: string;
 }
 
-const SectionMagazine1: FC<SectionMagazine1Props> = ({
-  posts,
-  tabs,
-  heading = "Latest Articles 🎈 ",
-  className = "",
-}) => {
+const SectionMagazine1: FC<SectionMagazine1Props> = ({ posts, tabs, heading = "Latest Articles 🎈 ", className = "" }) => {
   const [tabActive, setTabActive] = useState<string>(tabs[0]);
 
   const handleClickTab = (item: string) => {
@@ -28,18 +23,13 @@ const SectionMagazine1: FC<SectionMagazine1Props> = ({
 
   return (
     <div className={`nc-SectionMagazine1 ${className}`}>
-      <HeaderFilter
-        tabActive={tabActive}
-        tabs={tabs}
-        heading={heading}
-        onClickTab={handleClickTab}
-      />
+      <HeaderFilter tabActive={tabActive} tabs={tabs} heading={heading} onClickTab={handleClickTab} />
       {!posts.length && <span>Nothing we found!</span>}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
         {posts[0] && <Card2 size="large" post={posts[0]} />}
         <div className="grid gap-6 md:gap-8">
           {posts
-            .filter((_, i) => i < 4 && i > 0)
+            .filter((_: any, i: number) => i < 4 && i > 0)
             .map((item, index) => (
               <Card6 key={index} post={item} />
             ))}

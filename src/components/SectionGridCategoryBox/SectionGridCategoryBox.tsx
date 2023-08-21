@@ -15,7 +15,7 @@ export interface SectionGridCategoryBoxProps {
   className?: string;
 }
 
-const DATA = DEMO_CATEGORIES.filter((_, i) => i < 10);
+const DATA = DEMO_CATEGORIES.filter((_: any, i: number) => i < 10);
 
 const SectionGridCategoryBox: React.FC<SectionGridCategoryBoxProps> = ({
   categories = DATA,
@@ -52,11 +52,7 @@ const SectionGridCategoryBox: React.FC<SectionGridCategoryBoxProps> = ({
       </Heading>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 sm:gap-6 md:gap-8">
         {categories.map((item, i) => (
-          <CardComponentName
-            index={i < 3 ? `#${i + 1}` : undefined}
-            key={item.id}
-            taxonomy={item}
-          />
+          <CardComponentName index={i < 3 ? `#${i + 1}` : undefined} key={item.id} taxonomy={item} />
         ))}
       </div>
     </div>

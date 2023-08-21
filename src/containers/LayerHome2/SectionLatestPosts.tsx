@@ -23,11 +23,11 @@ import SectionAds from "../PageHome/SectionAds";
 console.log(DEMO_TAGS);
 // THIS IS DEMO FOR MAIN DEMO
 // OTHER DEMO WILL PASS PROPS
-const postsDemo: PostDataType[] = DEMO_POSTS.filter((_, i) => i > 7 && i < 17);
-const widgetPostsDemo: PostDataType[] = DEMO_POSTS.filter((_, i) => i > 2 && i < 7);
+const postsDemo: PostDataType[] = DEMO_POSTS.filter((_: any, i: number) => i > 7 && i < 17);
+const widgetPostsDemo: PostDataType[] = DEMO_POSTS.filter((_: any, i: number) => i > 2 && i < 7);
 const tagsDemo: TaxonomyType[] = DEMO_TAGS.filter((i) => i.id === 3);
-const categoriesDemo: TaxonomyType[] = DEMO_CATEGORIES.filter((_, i) => i > 3 && i < 13);
-const authorsDemo: PostAuthorType[] = DEMO_AUTHORS.filter((_, i) => i < 5);
+const categoriesDemo: TaxonomyType[] = DEMO_CATEGORIES.filter((_: any, i: number) => i > 3 && i < 13);
+const authorsDemo: PostAuthorType[] = DEMO_AUTHORS.filter((_: any, i: number) => i < 5);
 //
 export interface SectionLatestPostsProps {
   posts?: PostDataType[];

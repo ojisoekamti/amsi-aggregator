@@ -7,12 +7,19 @@ import { DEMO_CATEGORIES } from "./taxonomies";
 import { PostDataType } from "./types";
 import { DEMO_AUTHORS } from "./authors";
 
+import axios from "axios";
+
+async function callAPIDataPost() {
+  const response = await axios.get("http://amsi-cms-dashboard.test/api/v1/view-posts");
+  return response.data.data;
+}
+
+let dataPost = await callAPIDataPost();
+
 // FOR MAIN DEMO
-const DEMO_POSTS = __posts.map((post, index): PostDataType => {
+const DEMO_POSTS = dataPost.map((post: any, index: number): PostDataType => {
   //  ##########  GET CATEGORY BY CAT ID ######## //
-  const categories = post.categoriesId.map(
-    (id) => DEMO_CATEGORIES.filter((taxonomy) => taxonomy.id === id)[0]
-  );
+  const categories = post.categoriesId.map((id: string | number) => DEMO_CATEGORIES.filter((taxonomy) => taxonomy.id === id)[0]);
 
   return {
     ...post,
@@ -25,9 +32,7 @@ const DEMO_POSTS = __posts.map((post, index): PostDataType => {
 // FOR MAIN DEMO
 const DEMO_POSTS_NEWS = __posts_news.map((post, index): PostDataType => {
   //  ##########  GET CATEGORY BY CAT ID ######## //
-  const categories = post.categoriesId.map(
-    (id) => DEMO_CATEGORIES.filter((taxonomy) => taxonomy.id === id)[0]
-  );
+  const categories = post.categoriesId.map((id) => DEMO_CATEGORIES.filter((taxonomy) => taxonomy.id === id)[0]);
 
   return {
     ...post,
@@ -40,9 +45,7 @@ const DEMO_POSTS_NEWS = __posts_news.map((post, index): PostDataType => {
 // FOR POST TYPE GALLERY
 const DEMO_POSTS_GALLERY = __postsGallery.map((post, index): PostDataType => {
   //  ##########  GET CATEGORY BY CAT ID ######## //
-  const categories = post.categoriesId.map(
-    (id) => DEMO_CATEGORIES.filter((taxonomy) => taxonomy.id === id)[0]
-  );
+  const categories = post.categoriesId.map((id) => DEMO_CATEGORIES.filter((taxonomy) => taxonomy.id === id)[0]);
 
   return {
     ...post,
@@ -55,9 +58,7 @@ const DEMO_POSTS_GALLERY = __postsGallery.map((post, index): PostDataType => {
 // FOR POST TYPE VIDEO
 const DEMO_POSTS_VIDEO = __postsVideo.map((post, index): PostDataType => {
   //  ##########  GET CATEGORY BY CAT ID ######## //
-  const categories = post.categoriesId.map(
-    (id) => DEMO_CATEGORIES.filter((taxonomy) => taxonomy.id === id)[0]
-  );
+  const categories = post.categoriesId.map((id) => DEMO_CATEGORIES.filter((taxonomy) => taxonomy.id === id)[0]);
 
   return {
     ...post,
@@ -70,9 +71,7 @@ const DEMO_POSTS_VIDEO = __postsVideo.map((post, index): PostDataType => {
 // FOR POST TYPE AUDIO
 const DEMO_POSTS_AUDIO = __postsAudio.map((post, index): PostDataType => {
   //  ##########  GET CATEGORY BY CAT ID ######## //
-  const categories = post.categoriesId.map(
-    (id) => DEMO_CATEGORIES.filter((taxonomy) => taxonomy.id === id)[0]
-  );
+  const categories = post.categoriesId.map((id) => DEMO_CATEGORIES.filter((taxonomy) => taxonomy.id === id)[0]);
 
   return {
     ...post,
@@ -82,10 +81,4 @@ const DEMO_POSTS_AUDIO = __postsAudio.map((post, index): PostDataType => {
   } as PostDataType;
 });
 
-export {
-  DEMO_POSTS,
-  DEMO_POSTS_AUDIO,
-  DEMO_POSTS_GALLERY,
-  DEMO_POSTS_VIDEO,
-  DEMO_POSTS_NEWS,
-};
+export { DEMO_POSTS, DEMO_POSTS_AUDIO, DEMO_POSTS_GALLERY, DEMO_POSTS_VIDEO, DEMO_POSTS_NEWS };

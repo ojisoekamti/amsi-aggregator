@@ -21,7 +21,7 @@ import BgGlassmorphism from "components/BgGlassmorphism/BgGlassmorphism";
 const POSTS = DEMO_POSTS;
 
 // DEMO POST FOR MAGAZINE SECTION
-const MAGAZINE1_POSTS = POSTS.filter((_, i) => i >= 0 && i < 8);
+const MAGAZINE1_POSTS = POSTS.filter((_: any, i: number) => i >= 0 && i < 8);
 //
 
 const PageHomeDemo2: React.FC = () => {
@@ -58,7 +58,7 @@ const PageHomeDemo2: React.FC = () => {
           categoryCardType="card5"
           itemPerRow={4}
           subHeading="Discover over 112 topics"
-          categories={DEMO_CATEGORIES.filter((_, i) => i < 10)}
+          categories={DEMO_CATEGORIES.filter((_: any, i: number) => i < 10)}
           uniqueSliderClass="PageHomeDemo2"
         />
 
@@ -70,7 +70,7 @@ const PageHomeDemo2: React.FC = () => {
             sliderStype="style2"
             heading="Sea travel enthusiast"
             subHeading="Over 218 articles about sea travel"
-            posts={POSTS.filter((_, i) => i < 8)}
+            posts={POSTS.filter((_: any, i: number) => i < 8)}
             uniqueSliderClass="PageHomeDemo2_section1"
           />
         </div>
@@ -84,7 +84,7 @@ const PageHomeDemo2: React.FC = () => {
             <Card16Podcast post={DEMO_POSTS_AUDIO[12]} />
             <div className="md:col-span-2 lg:col-span-3">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                {DEMO_POSTS_AUDIO.filter((_, i) => i < 9).map((p) => (
+                {DEMO_POSTS_AUDIO.filter((_: any, i: number) => i < 9).map((p) => (
                   <Card15Podcast key={p.id} post={p} />
                 ))}
               </div>
@@ -101,7 +101,7 @@ const PageHomeDemo2: React.FC = () => {
           <SectionSliderNewAuthors
             heading="Top authors of month"
             subHeading="Say hello to future creator potentials"
-            authors={DEMO_AUTHORS.filter((_, i) => i < 10)}
+            authors={DEMO_AUTHORS.filter((_: any, i: number) => i < 10)}
             uniqueSliderClass="PageHomeDemo2"
           />
         </div>
@@ -116,7 +116,7 @@ const PageHomeDemo2: React.FC = () => {
             postCardName="card9"
             heading="Sea travel enthusiast"
             subHeading="Over 218 articles about sea travel"
-            posts={POSTS.filter((_, i) => i < 8)}
+            posts={POSTS.filter((_: any, i: number) => i < 8)}
             uniqueSliderClass="PageHomeDemo2_section2"
           />
         </div>
@@ -127,9 +127,9 @@ const PageHomeDemo2: React.FC = () => {
         {/* === SECTION 8 === */}
         <SectionLatestPosts
           className="pb-16 lg:pb-28"
-          posts={DEMO_POSTS.filter((_, i) => i > 7 && i < 18)}
-          widgetPosts={DEMO_POSTS.filter((_, i) => i > 2 && i < 7)}
-          categories={DEMO_CATEGORIES.filter((_, i) => i > 2 && i < 8)}
+          posts={DEMO_POSTS.filter((_: any, i: number) => i > 7 && i < 18)}
+          widgetPosts={DEMO_POSTS.filter((_: any, i: number) => i > 2 && i < 7)}
+          categories={DEMO_CATEGORIES.filter((_: any, i: number) => i > 2 && i < 8)}
           tags={DEMO_CATEGORIES}
           postCardName="card14"
           gridClass="sm:grid-cols-2"

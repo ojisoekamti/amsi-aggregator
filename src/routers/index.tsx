@@ -44,6 +44,7 @@ import LayerHome2 from "containers/LayerHome2/LayerHome2";
 import LayerHome3 from "containers/LayerHome3/LayerHome3";
 import LayerHome4 from "containers/LayerHome4/LayerHome4";
 import LayerHome5 from "containers/LayerHome5/LayerHome5";
+import LayerHomeAggregator from "containers/layerHomeAggregator/PageSearchV2";
 
 export const pages: Page[] = [
   { path: "/", exact: true, component: LayerHome },
@@ -118,6 +119,7 @@ export const pages: Page[] = [
   { path: "/layer-home-3", component: LayerHome3 },
   { path: "/layer-home-4", component: LayerHome4 },
   { path: "/layer-home-5", component: LayerHome5 },
+  { path: "/aggregator", component: LayerHomeAggregator },
   //
 ];
 

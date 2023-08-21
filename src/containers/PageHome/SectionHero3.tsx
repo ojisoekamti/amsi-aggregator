@@ -14,10 +14,7 @@ const SectionHero3: FC<SectionHero3Props> = ({ posts, className = "" }) => {
     const { featuredImage, title, desc, href } = posts[0];
     return (
       <div className="aspect-h-8 aspect-w-8 sm:aspect-w-10 lg:aspect-w-16 ">
-        <NcImage
-          containerClassName="absolute inset-0 rounded-[40px] overflow-hidden"
-          src={featuredImage}
-        />
+        <NcImage containerClassName="absolute inset-0 rounded-[40px] overflow-hidden" src={featuredImage} />
         <span className="absolute inset-0 rounded-[40px] bg-black bg-opacity-50"></span>
         <div className="absolute inset-0 p-5 md:p-14 xl:p-20 2xl:p-28">
           <div className="max-w-2xl">
@@ -38,15 +35,11 @@ const SectionHero3: FC<SectionHero3Props> = ({ posts, className = "" }) => {
   };
 
   const renderSubPosts = () => {
-    const subPosts = posts.filter((_, i) => i >= 1 && i < 4);
+    const subPosts = posts.filter((_: any, i: number) => i >= 1 && i < 4);
     return (
       <div className="lg:px-14 xl:px-20 2xl:px-28 grid sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8 transform mt-6 md:-mt-20">
         {subPosts.map((post) => (
-          <Card5
-            className="bg-white dark:bg-neutral-800 shadow-2xl rounded-3xl"
-            key={post.id}
-            post={post}
-          />
+          <Card5 className="bg-white dark:bg-neutral-800 shadow-2xl rounded-3xl" key={post.id} post={post} />
         ))}
       </div>
     );

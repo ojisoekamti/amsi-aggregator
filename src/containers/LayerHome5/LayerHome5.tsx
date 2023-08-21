@@ -31,8 +31,8 @@ import SectionMagazine2 from "./SectionMagazine2";
 const POSTS: PostDataType[] = DEMO_POSTS;
 //
 const MAGAZINE1_TABS = ["all", "Garden", "Fitness", "Design"];
-const MAGAZINE1_POSTS = DEMO_POSTS.filter((_, i) => i >= 8 && i < 16);
-const MAGAZINE2_POSTS = DEMO_POSTS.filter((_, i) => i >= 0 && i < 7);
+const MAGAZINE1_POSTS = DEMO_POSTS.filter((_: any, i: number) => i >= 8 && i < 16);
+const MAGAZINE2_POSTS = DEMO_POSTS.filter((_: any, i: number) => i >= 0 && i < 7);
 //
 
 const LayerHome5: React.FC = () => {
@@ -67,10 +67,10 @@ const LayerHome5: React.FC = () => {
           {/* === SECTION 17 === */}
           <SectionLatestPosts
             className="pb-16 lg:pb-28"
-            posts={DEMO_POSTS.filter((_, i) => i > 8 && i < 16)}
-            widgetPosts={DEMO_POSTS.filter((_, i) => i > 2 && i < 7)}
-            categories={DEMO_CATEGORIES.filter((_, i) => i > 2 && i < 8)}
-            tags={DEMO_CATEGORIES.filter((_, i) => i > 2 && i < 8)}
+            posts={DEMO_POSTS.filter((_: any, i: number) => i > 8 && i < 16)}
+            widgetPosts={DEMO_POSTS.filter((_: any, i: number) => i > 2 && i < 7)}
+            categories={DEMO_CATEGORIES.filter((_: any, i: number) => i > 2 && i < 8)}
+            tags={DEMO_CATEGORIES.filter((_: any, i: number) => i > 2 && i < 8)}
           />
           {/* === Ads === */}
           <div className="pb-16">
@@ -84,7 +84,7 @@ const LayerHome5: React.FC = () => {
               heading="Infografis"
               subHeading=""
               sliderStype="style2"
-              posts={DEMO_POSTS_AUDIO.filter((_, i) => i > 3 && i < 10)}
+              posts={DEMO_POSTS_AUDIO.filter((_: any, i: number) => i > 3 && i < 10)}
               uniqueSliderClass="pageHome-section6"
             />
           </div>
