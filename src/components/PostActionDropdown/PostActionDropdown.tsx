@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import twFocusClass from "utils/twFocusClass";
-import NcDropDown from "components/NcDropDown/NcDropDown";
+// import NcDropDown from "components/NcDropDown/NcDropDown";
 import ModalReportItem from "components/ModalReportItem/ModalReportItem";
 import { PostDataType } from "data/types";
 import ModalHideAuthor from "./ModalHideAuthor";
@@ -54,7 +54,7 @@ const PostActionDropdown: FC<PostActionDropdownProps> = ({
   const openModalHideAuthor = () => setShowModalHideAuthor(true);
   const onCloseModalHideAuthor = () => setShowModalHideAuthor(false);
 
-  const hanldeClickDropDown = (item: typeof actions[number]) => {
+  const hanldeClickDropDown = (item: (typeof actions)[number]) => {
     if (item.id === "copylink") {
       navigator.clipboard.writeText(window.location.origin + postData.href);
       setIsCopied(true);
@@ -87,15 +87,16 @@ const PostActionDropdown: FC<PostActionDropdownProps> = ({
       });
     }
     return (
-      <NcDropDown
-        className={`text-neutral-500 dark:text-neutral-400 flex items-center justify-center rounded-full  ${containerClassName} ${twFocusClass()}`}
-        iconClass={iconClass}
-        data={actions}
-        panelMenusClass={
-          dropdownPositon === "up" ? "origin-bottom-right bottom-0" : undefined
-        }
-        onClick={hanldeClickDropDown}
-      />
+      <></>
+      // <NcDropDown
+      //   className={`text-neutral-500 dark:text-neutral-400 flex items-center justify-center rounded-full  ${containerClassName} ${twFocusClass()}`}
+      //   iconClass={iconClass}
+      //   data={actions}
+      //   panelMenusClass={
+      //     dropdownPositon === "up" ? "origin-bottom-right bottom-0" : undefined
+      //   }
+      //   onClick={hanldeClickDropDown}
+      // />
     );
   };
 
@@ -103,16 +104,8 @@ const PostActionDropdown: FC<PostActionDropdownProps> = ({
     <div>
       {renderMenu()}
 
-      <ModalReportItem
-        show={isReporting}
-        id={postData.id}
-        onCloseModalReportItem={closeModalReportPost}
-      />
-      <ModalHideAuthor
-        show={showModalHideAuthor}
-        auhthor={postData.author}
-        onCloseModalHideAuthor={onCloseModalHideAuthor}
-      />
+      <ModalReportItem show={isReporting} id={postData.id} onCloseModalReportItem={closeModalReportPost} />
+      <ModalHideAuthor show={showModalHideAuthor} auhthor={postData.author} onCloseModalHideAuthor={onCloseModalHideAuthor} />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { FC, useRef, useState } from "react";
 import Avatar from "components/Avatar/Avatar";
-import NcDropDown from "components/NcDropDown/NcDropDown";
+// import NcDropDown from "components/NcDropDown/NcDropDown";
 import CommentCardLikeReplyContainer from "containers/CommentCardLikeReplyContainer/CommentCardLikeReplyContainer";
 import { PostAuthorType } from "data/types";
 import { Link } from "react-router-dom";
@@ -29,11 +29,7 @@ export interface CommentCardProps {
   size?: "large" | "normal";
 }
 
-const CommentCard: FC<CommentCardProps> = ({
-  className = "",
-  comment,
-  size = "large",
-}) => {
+const CommentCard: FC<CommentCardProps> = ({ className = "", comment, size = "large" }) => {
   const { author, id, date, parentId, content } = comment;
   const actions = [
     { id: "edit", name: "Edit", icon: "las la-edit" },
@@ -67,7 +63,7 @@ const CommentCard: FC<CommentCardProps> = ({
   const openModalDeleteComment = () => setIsDeleting(true);
   const closeModalDeleteComment = () => setIsDeleting(false);
 
-  const hanldeClickDropDown = (item: typeof actions[number]) => {
+  const hanldeClickDropDown = (item: (typeof actions)[number]) => {
     if (item.id === "reply") {
       return openReplyForm();
     }
@@ -99,18 +95,11 @@ const CommentCard: FC<CommentCardProps> = ({
 
   return (
     <>
-      <div
-        className={`nc-CommentCard flex ${className}`}
-        data-nc-id="CommentCard"
-        data-comment-id={id}
-        data-comment-parent-id={parentId}
-      >
+      <div className={`nc-CommentCard flex ${className}`} data-nc-id="CommentCard" data-comment-id={id} data-comment-parent-id={parentId}>
         <Avatar
           imgUrl={author.avatar}
           userName={author.displayName}
-          sizeClass={`h-6 w-6 text-base ${
-            size === "large" ? "sm:text-lg sm:h-8 sm:w-8" : ""
-          }`}
+          sizeClass={`h-6 w-6 text-base ${size === "large" ? "sm:text-lg sm:h-8 sm:w-8" : ""}`}
           radius="rounded-full"
           containerClassName="mt-4"
         />
@@ -118,56 +107,30 @@ const CommentCard: FC<CommentCardProps> = ({
           {/* AUTHOR INFOR */}
           <div className="relative flex items-center pr-6">
             <div className="absolute -right-3 -top-3">
-              <NcDropDown
+              {/* <NcDropDown
                 className={`p-2 text-neutral-500 flex items-center justify-center rounded-lg hover:text-neutral-800 dark:hover:text-neutral-200 sm:hover:bg-neutral-100 dark:hover:bg-neutral-800 ${twFocusClass()}`}
                 data={actions}
                 onClick={hanldeClickDropDown}
-              />
+              /> */}
             </div>
-            <Link
-              className="flex-shrink-0 font-semibold text-neutral-800 dark:text-neutral-100"
-              to={author.href}
-            >
+            <Link className="flex-shrink-0 font-semibold text-neutral-800 dark:text-neutral-100" to={author.href}>
               {author.displayName}
             </Link>
             <span className="mx-2">·</span>
-            <span className="text-neutral-500 dark:text-neutral-400 text-xs line-clamp-1 sm:text-sm">
-              {date}
-            </span>
+            <span className="text-neutral-500 dark:text-neutral-400 text-xs line-clamp-1 sm:text-sm">{date}</span>
           </div>
 
           {/* CONTENT */}
-          <span className="block text-neutral-700 mt-2 mb-3 sm:mt-3 sm:mb-4 dark:text-neutral-300">
-            {content}
-          </span>
+          <span className="block text-neutral-700 mt-2 mb-3 sm:mt-3 sm:mb-4 dark:text-neutral-300">{content}</span>
 
           {/* ACTION LIKE REPLY */}
-          {isReplying ? (
-            renderCommentForm()
-          ) : (
-            <CommentCardLikeReplyContainer
-              onClickReply={openReplyForm}
-              comment={comment}
-            />
-          )}
+          {isReplying ? renderCommentForm() : <CommentCardLikeReplyContainer onClickReply={openReplyForm} comment={comment} />}
         </div>
       </div>
 
-      <ModalEditComment
-        show={isEditting}
-        comment={comment}
-        onCloseModalEditComment={closeModalEditComment}
-      />
-      <ModalReportItem
-        show={isReporting}
-        id={comment.id}
-        onCloseModalReportItem={closeModalReportComment}
-      />
-      <ModalDeleteComment
-        show={isDeleting}
-        commentId={comment.id}
-        onCloseModalDeleteComment={closeModalDeleteComment}
-      />
+      <ModalEditComment show={isEditting} comment={comment} onCloseModalEditComment={closeModalEditComment} />
+      <ModalReportItem show={isReporting} id={comment.id} onCloseModalReportItem={closeModalReportComment} />
+      <ModalDeleteComment show={isDeleting} commentId={comment.id} onCloseModalDeleteComment={closeModalDeleteComment} />
     </>
   );
 };
