@@ -58,9 +58,13 @@ export const pages: Page[] = [
   { path: "/archive-audio/:slug", component: PageArchiveAudio },
   //
   { path: "/author/:slug", component: PageAuthor },
+
   { path: "/author-v2/:slug", component: PageAuthorV2 },
   //
   { path: "/single/:slug", component: PageSingleTemp3Sidebar },
+
+  { path: "/:slug", component: PageSingleTemp3Sidebar },
+
   {
     path: "/single-sidebar/:slug",
     component: PageSingleTemplate3,

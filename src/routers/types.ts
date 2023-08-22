@@ -14,6 +14,7 @@ export interface LocationStates {
   "/author-v2/:slug"?: {};
   //
   "/single/:slug"?: {};
+  "/:slug"?: {};
   "/single-template-2/:slug"?: {};
   "/single-template-3/:slug"?: {};
   "/single-sidebar/:slug"?: {};

@@ -11,41 +11,27 @@ export interface SingleMetaAction2Props {
   meta: PostDataType;
 }
 
-const SingleMetaAction2: FC<SingleMetaAction2Props> = ({
-  className = "",
-  meta,
-}) => {
+const SingleMetaAction2: FC<SingleMetaAction2Props> = ({ className = "", meta }) => {
   const { id, bookmark } = meta;
 
   return (
     <div className={`nc-SingleMetaAction2 ${className}`}>
       <div className="flex flex-row space-x-2.5 items-center">
-        <PostCardLikeAndComment
-          itemClass="px-4 h-9 text-sm"
-          hiddenCommentOnMobile
-          postData={meta}
-          className="!space-x-2.5"
-        />
-        <div className="px-1">
+        {/* <PostCardLikeAndComment itemClass="px-4 h-9 text-sm" hiddenCommentOnMobile postData={meta} className="!space-x-2.5" /> */}
+        {/* <div className="px-1">
           <div className="border-l border-neutral-200 dark:border-neutral-700 h-6" />
-        </div>
+        </div> */}
 
-        <BookmarkContainer
+        {/* <BookmarkContainer
           initBookmarked={bookmark.isBookmarked}
           postId={String(id)}
           containerClassName="h-9 w-9 bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
           iconClass="h-5 w-5"
-        />
+        /> */}
         <NcDropDown
           className="flex-shrink-0 flex items-center justify-center focus:outline-none h-9 w-9 bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-full"
           renderTrigger={() => (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -57,11 +43,11 @@ const SingleMetaAction2: FC<SingleMetaAction2Props> = ({
           onClick={() => {}}
           data={SOCIALS_DATA}
         />
-        <PostActionDropdown
+        {/* <PostActionDropdown
           containerClassName="h-9 w-9 bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700"
           iconClass="h-5 w-5"
           postData={meta}
-        />
+        /> */}
       </div>
     </div>
   );
