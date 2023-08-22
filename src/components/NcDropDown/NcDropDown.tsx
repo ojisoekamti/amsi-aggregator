@@ -17,7 +17,7 @@ export interface NcDropDownProps {
   renderTrigger?: () => ReactNode;
   renderItem?: (item: NcDropDownItem) => ReactNode;
   title?: string;
-  onClick: (item: NcDropDownItem) => void;
+  onclick: (item: NcDropDownItem) => void;
 }
 
 const NcDropDown: FC<NcDropDownProps> = ({
@@ -28,21 +28,12 @@ const NcDropDown: FC<NcDropDownProps> = ({
   renderTrigger,
   renderItem,
   data,
-  onClick,
+  onclick,
 }) => {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <Menu.Button className={className} title={title}>
-        {renderTrigger ? (
-          renderTrigger()
-        ) : (
-          <DotsHorizontalIcon
-            className={iconClass}
-            aria-hidden="true"
-            stroke="none"
-            fill="currentColor"
-          />
-        )}
+        {renderTrigger ? renderTrigger() : <DotsHorizontalIcon className={iconClass} aria-hidden="true" stroke="none" fill="currentColor" />}
       </Menu.Button>
       <Transition
         as={Fragment}
@@ -58,11 +49,7 @@ const NcDropDown: FC<NcDropDownProps> = ({
         >
           <div className="px-1 py-3 text-sm text-neutral-6000 dark:text-neutral-300">
             {data.map((item) => (
-              <Menu.Item
-                key={item.id}
-                onClick={() => onClick(item)}
-                data-menu-item-id={item.id}
-              >
+              <Menu.Item key={item.id} onClick={() => onclick(item)} data-menu-item-id={item.id}>
                 {() =>
                   renderItem && typeof renderItem(item) !== "undefined" ? (
                     renderItem(item)
@@ -73,9 +60,7 @@ const NcDropDown: FC<NcDropDownProps> = ({
                         twFocusClass()
                       }
                     >
-                      {!!item.icon && (
-                        <i className={`${item.icon} mr-1 w-7 text-base`}></i>
-                      )}
+                      {!!item.icon && <i className={`${item.icon} mr-1 w-7 text-base`}></i>}
                       <span className="truncate">{item.name}</span>
                     </button>
                   )
