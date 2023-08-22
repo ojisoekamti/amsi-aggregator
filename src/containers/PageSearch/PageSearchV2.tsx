@@ -110,9 +110,9 @@ const PageSearchV2: FC<PageSearchV2Props> = ({ className = "" }) => {
           )}
 
           {/* PAGINATION */}
-          <div className="flex flex-col mt-12 lg:mt-16 space-y-5 sm:space-y-0 sm:space-x-3 sm:flex-row sm:justify-between sm:items-center">
+          <div className="flex flex-col mt-12 lg:mt-16 space-y-5 sm:space-y-0 sm:space-x-3 sm:flex-row justify-center sm:items-center">
             <Pagination />
-            <ButtonPrimary>Show me more</ButtonPrimary>
+            {/* <ButtonPrimary>Show me more</ButtonPrimary> */}
           </div>
         </main>
 

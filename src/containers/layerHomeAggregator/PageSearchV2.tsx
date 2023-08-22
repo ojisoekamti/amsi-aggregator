@@ -26,9 +26,9 @@ export interface PageSearchV2Props {
 }
 
 const posts: PostDataType[] = DEMO_POSTS.filter((_: any, i: number) => i < 12);
-const cats = DEMO_CATEGORIES.filter((_:any, i:number) => i < 15);
-const tags = DEMO_CATEGORIES.filter((_:any, i:number) => i < 32);
-const authors = DEMO_AUTHORS.filter((_:any, i:number) => i < 12);
+const cats = DEMO_CATEGORIES.filter((_: any, i: number) => i < 15);
+const tags = DEMO_CATEGORIES.filter((_: any, i: number) => i < 32);
+const authors = DEMO_AUTHORS.filter((_: any, i: number) => i < 12);
 
 const FILTERS = [
   { name: "Most Recent" },
@@ -55,7 +55,7 @@ const PageSearchV2: FC<PageSearchV2Props> = ({ className = "" }) => {
     <div className={`nc-PageSearchV2 ${className}`} data-nc-id="PageSearchV2">
       <HeadBackgroundCommon className="h-24 2xl:h-28" />
       <Helmet>
-        <title>Nc || Search Page Template</title>
+        <title>Agregator</title>
       </Helmet>
       <div className="container">
         <header className="max-w-2xl mx-auto -mt-10 flex flex-col lg:-mt-7">
@@ -151,7 +151,7 @@ const PageSearchV2: FC<PageSearchV2Props> = ({ className = "" }) => {
         {/* === SECTION 5 === */}
         <div className="relative py-16">
           <BackgroundSection />
-          <SectionGridCategoryBox categories={DEMO_CATEGORIES.filter((_:any, i:number) => i < 10)} />
+          <SectionGridCategoryBox categories={DEMO_CATEGORIES.filter((_: any, i: number) => i < 10)} />
           <div className="text-center mx-auto mt-10 md:mt-16">
             <ButtonSecondary>Show me more</ButtonSecondary>
           </div>
@@ -161,7 +161,7 @@ const PageSearchV2: FC<PageSearchV2Props> = ({ className = "" }) => {
         <SectionSliderNewAuthors
           heading="Top elite authors"
           subHeading="Discover our elite writers"
-          authors={DEMO_AUTHORS.filter((_:any, i:number) => i < 10)}
+          authors={DEMO_AUTHORS.filter((_: any, i: number) => i < 10)}
           uniqueSliderClass="PageSearchV2"
         />
 

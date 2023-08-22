@@ -10,7 +10,7 @@ import { DEMO_AUTHORS } from "./authors";
 import axios from "axios";
 
 async function callAPIDataPost() {
-  const response = await axios.get(import.meta.env.VITE_API_URL + "/view-posts");
+  const response = await axios.get(import.meta.env.VITE_API_URL + "/view-posts?limit=100");
   return response.data.data;
 }
 
