@@ -32,7 +32,7 @@ const Card11: FC<Card11Props> = ({ className = "h-full", post, hiddenAuthor = fa
           <PostFeaturedMedia post={post} isHover={isHover} />
         </div>
       </div>
-      <Link to={href} className="absolute inset-0"></Link>
+      <a href={href} className="absolute inset-0"></a>
       <span className="absolute top-3 inset-x-3 z-10">
         <CategoryBadgeList categories={categories} />
       </span>
