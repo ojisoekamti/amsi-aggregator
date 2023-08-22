@@ -49,7 +49,7 @@ const NcDropDown: FC<NcDropDownProps> = ({
         >
           <div className="px-1 py-3 text-sm text-neutral-6000 dark:text-neutral-300">
             {data.map((item) => (
-              <Menu.Item key={item.id} onClick={() => onClick(item)} data-menu-item-id={item.id}>
+              <Menu.Item key={item.id} /* onClick={() => onClick(item)} */ data-menu-item-id={item.id}>
                 {() =>
                   renderItem && typeof renderItem(item) !== "undefined" ? (
                     renderItem(item)
