@@ -49,7 +49,7 @@ const PageHomeDemo7: React.FC = () => {
       <Helmet>
         <title>Home || Blog Magazine React Template</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet"></link>
       </Helmet>
 
