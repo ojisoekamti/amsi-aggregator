@@ -20,7 +20,6 @@ import Card11 from "components/Card11/Card11";
 import Card14 from "components/Card14/Card14";
 import SectionAds from "../PageHome/SectionAds";
 
-console.log(DEMO_TAGS);
 // THIS IS DEMO FOR MAIN DEMO
 // OTHER DEMO WILL PASS PROPS
 const postsDemo: PostDataType[] = DEMO_POSTS.filter((_: any, i: number) => i > 7 && i < 17);

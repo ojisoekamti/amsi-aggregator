@@ -17,15 +17,8 @@ export interface CardLarge1Props {
   isShowing?: boolean;
 }
 
-const CardLarge1: FC<CardLarge1Props> = ({
-  className = "",
-  isShowing = true,
-  post,
-  onClickNext = () => {},
-  onClickPrev = () => {},
-}) => {
-  const { featuredImage, title, date, categories, author, readingTime, href } =
-    post;
+const CardLarge1: FC<CardLarge1Props> = ({ className = "", isShowing = true, post, onClickNext = () => {}, onClickPrev = () => {} }) => {
+  const { featuredImage, title, date, categories, author, readingTime, href } = post;
 
   return (
     <Transition
@@ -53,12 +46,12 @@ const CardLarge1: FC<CardLarge1Props> = ({
             <CardAuthor2 className="relative" author={author} date={date} />
 
             <div className="flex items-center justify-between mt-auto">
-              <PostCardLikeAndComment postData={post} />
-              <PostCardSaveAction
+              {/* <PostCardLikeAndComment postData={post} /> */}
+              {/* <PostCardSaveAction
                 classBgIcon="h-8 w-8 bg-neutral-50 bg-opacity-20 hover:bg-opacity-50 dark:bg-neutral-800 dark:bg-opacity-30 dark:hover:bg-opacity-50"
                 postData={post}
                 readingTime={readingTime}
-              />
+              /> */}
             </div>
           </div>
         </Transition.Child>
@@ -69,11 +62,7 @@ const CardLarge1: FC<CardLarge1Props> = ({
           enterFrom="translate-y-4 opacity-0"
           enterTo="translate-y-0 opacity-100"
         >
-          <NextPrev
-            btnClassName="w-11 h-11 text-xl"
-            onClickNext={onClickNext}
-            onClickPrev={onClickPrev}
-          />
+          <NextPrev btnClassName="w-11 h-11 text-xl" onClickNext={onClickNext} onClickPrev={onClickPrev} />
         </Transition.Child>
       </div>
       <Transition.Child
