@@ -17,7 +17,7 @@ export interface NcDropDownProps {
   renderTrigger?: () => ReactNode;
   renderItem?: (item: NcDropDownItem) => ReactNode;
   title?: string;
-  onclick: (item: NcDropDownItem) => void;
+  onClick: (item: NcDropDownItem) => void;
 }
 
 const NcDropDown: FC<NcDropDownProps> = ({
@@ -28,7 +28,7 @@ const NcDropDown: FC<NcDropDownProps> = ({
   renderTrigger,
   renderItem,
   data,
-  onclick,
+  onClick,
 }) => {
   return (
     <Menu as="div" className="relative inline-block text-left">
@@ -49,7 +49,7 @@ const NcDropDown: FC<NcDropDownProps> = ({
         >
           <div className="px-1 py-3 text-sm text-neutral-6000 dark:text-neutral-300">
             {data.map((item) => (
-              <Menu.Item key={item.id} onClick={() => onclick(item)} data-menu-item-id={item.id}>
+              <Menu.Item key={item.id} onClick={() => onClick(item)} data-menu-item-id={item.id}>
                 {() =>
                   renderItem && typeof renderItem(item) !== "undefined" ? (
                     renderItem(item)
