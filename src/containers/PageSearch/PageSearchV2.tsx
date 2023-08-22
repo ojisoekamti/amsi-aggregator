@@ -40,7 +40,7 @@ const FILTERS = [
 const TABS = ["Articles", "Categories", "Tags", "Authors"];
 
 const PageSearchV2: FC<PageSearchV2Props> = ({ className = "" }) => {
-  let s = "Ui Design";
+  let s = "";
 
   const [tabActive, setTabActive] = useState<string>(TABS[0]);
 
@@ -55,7 +55,7 @@ const PageSearchV2: FC<PageSearchV2Props> = ({ className = "" }) => {
     <div className={`nc-PageSearchV2 ${className}`} data-nc-id="PageSearchV2">
       <HeadBackgroundCommon className="h-24 2xl:h-28" />
       <Helmet>
-        <title>Nc || Search Page Template</title>
+        <title>AMSI - Aggregator</title>
       </Helmet>
       <div className="container">
         <header className="max-w-2xl mx-auto -mt-10 flex flex-col lg:-mt-7">
@@ -84,8 +84,7 @@ const PageSearchV2: FC<PageSearchV2Props> = ({ className = "" }) => {
             </label>
           </form>
           <span className="block text-sm mt-4 text-neutral-500 dark:text-neutral-300">
-            We found <strong className="font-semibold text-neutral-800 dark:text-neutral-100">1135</strong> results articles for{" "}
-            <strong className="font-semibold text-neutral-800 dark:text-neutral-100">"{s}"</strong>
+            <strong className="font-semibold text-neutral-800 dark:text-neutral-100">{s}</strong>
           </span>
         </header>
       </div>
@@ -93,13 +92,7 @@ const PageSearchV2: FC<PageSearchV2Props> = ({ className = "" }) => {
         <main>
           {/* TABS FILTER */}
           <div className="flex flex-col sm:items-center sm:justify-between sm:flex-row ">
-            <Nav containerClassName="w-full overflow-x-auto hiddenScrollbar" className=" sm:space-x-2">
-              {TABS.map((item, index) => (
-                <NavItem key={index} isActive={tabActive === item} onClick={() => handleClickTab(item)}>
-                  {item}
-                </NavItem>
-              ))}
-            </Nav>
+            <div></div>
             <div className="block my-4 border-b w-full border-neutral-100 sm:hidden"></div>
             <div className="flex justify-end">
               <ArchiveFilterListBox lists={FILTERS} />
@@ -115,30 +108,6 @@ const PageSearchV2: FC<PageSearchV2Props> = ({ className = "" }) => {
               ))}
             </div>
           )}
-          {/* LOOP ITEMS CATEGORIES */}
-          {tabActive === "Categories" && (
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 md:gap-8 mt-8 lg:mt-10">
-              {cats.map((cat) => (
-                <CardCategory2 key={cat.id} taxonomy={cat} />
-              ))}
-            </div>
-          )}
-          {/* LOOP ITEMS TAGS */}
-          {tabActive === "Tags" && (
-            <div className="flex flex-wrap mt-12 ">
-              {tags.map((tag) => (
-                <Tag className="mb-3 mr-3" key={tag.id} tag={tag} />
-              ))}
-            </div>
-          )}
-          {/* LOOP ITEMS POSTS */}
-          {tabActive === "Authors" && (
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 md:gap-8 mt-8 lg:mt-10">
-              {authors.map((author) => (
-                <CardAuthorBox2 key={author.id} author={author} />
-              ))}
-            </div>
-          )}
 
           {/* PAGINATION */}
           <div className="flex flex-col mt-12 lg:mt-16 space-y-5 sm:space-y-0 sm:space-x-3 sm:flex-row sm:justify-between sm:items-center">
@@ -149,24 +118,24 @@ const PageSearchV2: FC<PageSearchV2Props> = ({ className = "" }) => {
 
         {/* MORE SECTIONS */}
         {/* === SECTION 5 === */}
-        <div className="relative py-16">
+        {/* <div className="relative py-16">
           <BackgroundSection />
           <SectionGridCategoryBox categories={DEMO_CATEGORIES.filter((_: any, i: number) => i < 10)} />
           <div className="text-center mx-auto mt-10 md:mt-16">
             <ButtonSecondary>Show me more</ButtonSecondary>
           </div>
-        </div>
+        </div> */}
 
         {/* === SECTION 5 === */}
-        <SectionSliderNewAuthors
+        {/* <SectionSliderNewAuthors
           heading="Top elite authors"
           subHeading="Discover our elite writers"
           authors={DEMO_AUTHORS.filter((_: any, i: number) => i < 10)}
           uniqueSliderClass="PageSearchV2"
-        />
+        /> */}
 
         {/* SUBCRIBES */}
-        <SectionSubscribe2 />
+        {/* <SectionSubscribe2 /> */}
       </div>
     </div>
   );

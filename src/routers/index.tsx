@@ -47,7 +47,7 @@ import LayerHome5 from "containers/LayerHome5/LayerHome5";
 import LayerHomeAggregator from "containers/layerHomeAggregator/PageSearchV2";
 
 export const pages: Page[] = [
-  { path: "/", exact: true, component: LayerHome },
+  { path: "/", exact: true, component: PageSearchV2 },
   { path: "/#", exact: true, component: LayerHome },
   //
   { path: "/home-header-style2", exact: true, component: LayerHome },

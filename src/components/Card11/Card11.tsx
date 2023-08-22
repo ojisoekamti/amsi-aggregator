@@ -14,12 +14,7 @@ export interface Card11Props {
   hiddenAuthor?: boolean;
 }
 
-const Card11: FC<Card11Props> = ({
-  className = "h-full",
-  post,
-  hiddenAuthor = false,
-  ratio = "aspect-w-4 aspect-h-3",
-}) => {
+const Card11: FC<Card11Props> = ({ className = "h-full", post, hiddenAuthor = false, ratio = "aspect-w-4 aspect-h-3" }) => {
   const { title, href, categories, date } = post;
 
   const [isHover, setIsHover] = useState(false);
@@ -32,9 +27,7 @@ const Card11: FC<Card11Props> = ({
       onMouseLeave={() => setIsHover(false)}
       //
     >
-      <div
-        className={`block flex-shrink-0 relative w-full rounded-t-xl overflow-hidden ${ratio}`}
-      >
+      <div className={`block flex-shrink-0 relative w-full rounded-t-xl overflow-hidden ${ratio}`}>
         <div>
           <PostFeaturedMedia post={post} isHover={isHover} />
         </div>
@@ -45,19 +38,15 @@ const Card11: FC<Card11Props> = ({
       </span>
 
       <div className="p-4 flex flex-col flex-grow space-y-3">
-        {!hiddenAuthor ? (
-          <PostCardMeta meta={post} />
-        ) : (
-          <span className="text-xs text-neutral-500">{date}</span>
-        )}
+        {!hiddenAuthor ? <PostCardMeta meta={post} /> : <span className="text-xs text-neutral-500">{date}</span>}
         <h2 className="nc-card-title block text-base font-semibold text-neutral-900 dark:text-neutral-100 ">
           <Link to={href} className="line-clamp-2" title={title}>
             {title}
           </Link>
         </h2>
         <div className="flex items-end justify-between mt-auto">
-          <PostCardLikeAndComment className="relative" postData={post} />
-          <PostCardSaveAction className="relative" postData={post} />
+          {/* <PostCardLikeAndComment className="relative" postData={post} />
+          <PostCardSaveAction className="relative" postData={post} /> */}
         </div>
       </div>
     </div>

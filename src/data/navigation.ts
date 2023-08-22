@@ -356,15 +356,15 @@ export const NAVIGATION_DEMO: NavItemType[] = [
     id: ncNanoId(),
     href: "#",
     name: "News",
-    type: "dropdown",
-    children: demoChildMenus,
+    // type: "dropdown",
+    // children: demoChildMenus,
   },
   {
     id: ncNanoId(),
     href: "#",
     name: "Nasional",
-    type: "dropdown",
-    children: demoChildMenus,
+    // type: "dropdown",
+    // children: demoChildMenus,
   },
 
   {
@@ -392,8 +392,8 @@ export const NAVIGATION_DEMO: NavItemType[] = [
     id: ncNanoId(),
     href: "#",
     name: "Foto",
-    type: "dropdown",
-    children: demoChildMenus,
+    // type: "dropdown",
+    // children: demoChildMenus,
   },
   {
     id: ncNanoId(),
