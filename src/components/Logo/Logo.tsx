@@ -9,15 +9,12 @@ export interface LogoProps {
   imgLight?: string;
 }
 
-const Logo: React.FC<LogoProps> = ({
-  img = logoImg,
-  imgLight = logoLightImg,
-}) => {
+const Logo: React.FC<LogoProps> = ({ img = logoImg, imgLight = logoLightImg }) => {
   return (
     <Link to="/" className="ttnc-logo inline-block text-primary-6000">
       {/* THIS USE FOR MY MULTI DEMO */}
       {/* IF YOU ARE MY CLIENT. PLESE DELETE THIS CODE AND YOU YOUR IMAGE PNG BY BELLOW CODE */}
-      <LogoSvg />
+      <img width={100} src="https://cms-media.amsinews.id/storage/files/2/amsi2.png" />
     </Link>
   );
 };
