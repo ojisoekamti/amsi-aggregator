@@ -51,7 +51,7 @@ const PageArchive: FC<PageArchiveProps> = ({ className = "" }) => {
           />
           <div className="absolute inset-0 bg-black text-white bg-opacity-30 flex flex-col items-center justify-center">
             <h2 className="inline-block align-middle text-5xl font-semibold md:text-7xl ">{PAGE_DATA.name}</h2>
-            <span className="block mt-4 text-neutral-300">{PAGE_DATA.count} Articles</span>
+            {/* <span className="block mt-4 text-neutral-300">{PAGE_DATA.count} Articles</span> */}
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@ const PageArchive: FC<PageArchiveProps> = ({ className = "" }) => {
 
       <div className="container py-16 lg:pb-28 lg:pt-20 space-y-16 lg:space-y-28">
         <div>
-          <div className="flex flex-col sm:items-center sm:justify-between sm:flex-row">
+          {/* <div className="flex flex-col sm:items-center sm:justify-between sm:flex-row">
             <div className="flex space-x-2.5">
               <ModalCategories categories={DEMO_CATEGORIES} />
               <ModalTags tags={DEMO_TAGS} />
@@ -68,19 +68,19 @@ const PageArchive: FC<PageArchiveProps> = ({ className = "" }) => {
             <div className="flex justify-end">
               <ArchiveFilterListBox lists={FILTERS} />
             </div>
-          </div>
+          </div> */}
 
           {/* LOOP ITEMS */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 mt-8 lg:mt-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 mt-8 lg:mt-2">
             {posts.map((post) => (
               <Card11 key={post.id} post={post} />
             ))}
           </div>
 
           {/* PAGINATIONS */}
-          <div className="flex flex-col mt-12 lg:mt-16 space-y-5 sm:space-y-0 sm:space-x-3 sm:flex-row sm:justify-between sm:items-center">
+          <div className="flex flex-col mt-12 lg:mt-16 space-y-5 sm:space-y-0 sm:space-x-3 sm:flex-row sm:justify-center sm:items-center">
             <Pagination />
-            <ButtonPrimary>Show me more</ButtonPrimary>
+            {/* <ButtonPrimary>Show me more</ButtonPrimary> */}
           </div>
         </div>
 
