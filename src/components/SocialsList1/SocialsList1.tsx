@@ -17,7 +17,7 @@ const SocialsList1: FC<SocialsList1Props> = ({ className = "space-y-2.5" }) => {
         key={index}
       >
         <i className={item.icon}></i>
-        <span className="hidden lg:block text-sm">{item.name}</span>
+        {/* <span className="hidden lg:block text-sm">{item.name}</span> */}
       </a>
     );
   };
